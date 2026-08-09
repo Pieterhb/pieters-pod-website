@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover unique Print-on-Demand Western Art, Graphic T-Shirts, and Home Decor from our Redbubble and TeePublic stores." />
+    <title>Pieter's Print On Demand Art | Western & Graphic Tees</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo" data-target="home">
+        Pieter's <span>POD Art</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a data-target="home" class="active">Home</a></li>
+          <li><a data-target="western">Western & Country Art</a></li>
+          <li><a data-target="apparel">Graphic T-Shirts</a></li>
+          <li><a data-target="decor">Wall Art & Decor</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Homepage View -->
+      <section id="home" class="view active">
+        <div class="hero">
+          <h1>Discover Unique Art for Your Wardrobe and Home</h1>
+          <p>Welcome to our unified online art exhibition! Shop our exclusive collections of Western art, graphic tees, and home decor. We strive to be the world's leading experts in creating the trendiest items for everyone, all in one place.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+            <a href="https://www.redbubble.com/people/Pieterhk/" target="_blank" rel="noopener" class="btn">Shop on Redbubble</a>
+            <a href="https://www.teepublic.com/user/theblackpanther" target="_blank" rel="noopener" class="btn btn-outline">Shop on TeePublic</a>
+          </div>
+        </div>
+
+        <h2>Featured Categories</h2>
+        <div class="product-grid">
+          <!-- Category 1 -->
+          <article class="card">
+            <div class="card-img-container">
+              <img src="/images/scraped_image_015.jpg" alt="Western Art Collection" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Western & Country Art</h3>
+              <p>Explore the rugged beauty of the frontier with our exclusive Western & Country art collections. Perfect for anyone who loves the Old West.</p>
+              <button class="btn nav-btn" data-target="western">Explore Western Art</button>
+            </div>
+          </article>
+
+          <!-- Category 2 -->
+          <article class="card">
+            <div class="card-img-container">
+              <img src="/images/scraped_image_020.png" alt="Graphic T-Shirts" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Graphic T-Shirts & Apparel</h3>
+              <p>Stand out from the crowd with our unique graphic tees and apparel designs. Funny slogans, beautiful art, and striking graphics.</p>
+              <button class="btn nav-btn" data-target="apparel">Shop Apparel</button>
+            </div>
+          </article>
+
+          <!-- Category 3 -->
+          <article class="card">
+            <div class="card-img-container">
+              <img src="/images/scraped_image_025.png" alt="Home Decor" loading="lazy">
+            </div>
+            <div class="card-content">
+              <h3>Wall Art & Home Decor</h3>
+              <p>Transform your living space with our stunning wall art and decor items. High-quality posters, tapestries, and throw pillows.</p>
+              <button class="btn nav-btn" data-target="decor">Decorate Your Home</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Western Art View -->
+      <section id="western" class="view">
+        <h1>The Spirit of the Old West</h1>
+        <p>Inspired by the classics, our Western and Country Art collection captures the raw essence of the frontier. From cowboys and horses to vintage wanted posters and steam trains, these designs are perfect for anyone who loves the Old West.</p>
+        
+        <h2>Featured Western Designs</h2>
+        <div class="product-grid" id="western-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Apparel View -->
+      <section id="apparel" class="view">
+        <h1>Wear Your Vibe</h1>
+        <p>Whether you are looking for a funny slogan, a beautiful piece of digital art, or a striking graphic, our apparel collection has something for everyone. Available in multiple colors, sizes, and styles!</p>
+        
+        <h2>Top Graphic T-Shirts</h2>
+        <div class="product-grid" id="apparel-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- Decor View -->
+      <section id="decor" class="view">
+        <h1>Bring Your Walls to Life</h1>
+        <p>Why settle for blank walls? Our Print-On-Demand home decor products allow you to showcase your personality. Find the perfect piece to complete your room.</p>
+        
+        <h2>Featured Home Decor</h2>
+        <div class="product-grid" id="decor-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Pieter's Print On Demand Art. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.redbubble.com/people/Pieterhk/" target="_blank" rel="noopener">Redbubble Store</a>
+        <a href="https://www.teepublic.com/user/theblackpanther" target="_blank" rel="noopener">TeePublic Store</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
