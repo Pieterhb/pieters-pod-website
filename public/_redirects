@@ -1,0 +1,6 @@
+# Cloudflare Pages routing rules
+# Static pSEO pages are served directly from their index.html files.
+# Everything else falls through to the main SPA.
+
+# The SPA fallback — must be last
+/*    /index.html    200
