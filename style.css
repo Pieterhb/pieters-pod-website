@@ -380,11 +380,12 @@ footer {
   margin: 0 auto;
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
   .stats-banner { grid-template-columns: repeat(2, 1fr); }
   .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-brand { grid-column: 1 / -1; }
+  .pseo-sections-grid { grid-template-columns: repeat(2, 1fr); }
+  .browse-all-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -394,4 +395,150 @@ footer {
   .hero { padding: 4rem 1.5rem; }
   main { padding: 0 4%; }
   header { padding: 1rem 4%; }
+  .pseo-sections-grid { grid-template-columns: 1fr; }
+  .browse-all-grid { grid-template-columns: 1fr; }
+  .featured-pages-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== FOOTER (4 columns) ========== */
+.footer-content {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+/* ========== PSEO SECTION CARDS ========== */
+.pseo-sections-block { margin-top: 2rem; }
+.pseo-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0;
+}
+.pseo-section-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem 1.75rem 1.75rem;
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.pseo-section-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top left, rgba(224,90,51,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.pseo-section-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  border-color: rgba(224,90,51,0.4);
+}
+.pseo-section-icon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+.pseo-section-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+.pseo-section-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+.pseo-section-cta {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-top: 0.75rem;
+  transition: letter-spacing 0.2s;
+}
+.pseo-section-card:hover .pseo-section-cta {
+  letter-spacing: 0.03em;
+}
+
+/* ========== FEATURED PAGES GRID ========== */
+.featured-pages-block { margin-top: 1rem; }
+.featured-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+}
+.featured-page-link {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  text-align: center;
+}
+.featured-page-link:hover {
+  color: var(--accent-color);
+  border-color: rgba(224,90,51,0.4);
+  background: var(--bg-surface-hover);
+  transform: translateY(-2px);
+}
+
+/* ========== BROWSE ALL VIEW ========== */
+.browse-all-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.browse-section-group {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+}
+.browse-section-group h2 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.browse-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-weight: 600;
+  margin-left: auto;
+}
+.browse-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.browse-links li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  display: block;
+  transition: all 0.2s ease;
+}
+.browse-links li a:hover {
+  color: var(--accent-color);
+  background: rgba(224,90,51,0.07);
+  padding-left: 0.85rem;
 }

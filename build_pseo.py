@@ -11,6 +11,7 @@ Output: subdirectories under c:\\googlepod\\website\\ (deployed by Vite/Cloudfla
 import os
 import json
 import shutil
+import urllib.parse
 from datetime import datetime
 from math import ceil
 
@@ -21,7 +22,24 @@ from site_config import (
 )
 
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
-RB = STORE_RB2  # default Redbubble alias
+
+# =====================================================
+# Search URL builders — link to artist-filtered search
+# instead of the generic store homepage
+# =====================================================
+def rb_url(title: str, store: str = "RB2") -> str:
+    """Returns Redbubble artist shop search URL for a given product title."""
+    q = urllib.parse.quote(title)
+    if store == "RB1":
+        return f"{STORE_RB1}shop?query={q}"
+    return f"{STORE_RB2}shop?query={q}"
+
+def tp_url(title: str) -> str:
+    """Returns TeePublic artist profile search URL for a given product title."""
+    q = urllib.parse.quote(title)
+    return f"{STORE_TP}?query={q}"
+
+RB = STORE_RB2  # kept for backward compat; product urls below use rb_url()
 
 # ===========================================================================
 # PRODUCT DATA
@@ -30,90 +48,90 @@ RB = STORE_RB2  # default Redbubble alias
 # Every product: title, image path (relative to public/), store label, store URL, tags list
 PRODUCTS = [
     # ---- Western & Country Art (Redbubble) ----
-    {"id": "w01", "title": "Sheriff Badge Socks",            "img": "/images/scraped_image_001.png", "store": "Redbubble", "url": RB,      "tags": ["western","cowboy","sheriff","socks","accessories","gifts"]},
-    {"id": "w02", "title": "Wild West Covered Wagon Pillow", "img": "/images/scraped_image_005.png", "store": "Redbubble", "url": RB,      "tags": ["western","cowboy","pillow","home-decor","wild-west","gifts"]},
-    {"id": "w03", "title": "Wild West Cowboy Boot Dress",    "img": "/images/scraped_image_016.png", "store": "Redbubble", "url": RB,      "tags": ["western","cowboy","apparel","dress","women","fashion"]},
-    {"id": "w04", "title": "Indian Tomahawk Tapestry",       "img": "/images/scraped_image_018.png", "store": "Redbubble", "url": RB,      "tags": ["native-american","tapestry","wall-art","home-decor","western"]},
-    {"id": "w05", "title": "Cowboy & Indian Teepee Art",     "img": "/images/scraped_image_022.png", "store": "Redbubble", "url": RB,      "tags": ["western","native-american","wall-art","cowboy","gifts"]},
-    {"id": "w06", "title": "Western Lady Duvet Cover",       "img": "/images/scraped_image_004.png", "store": "Redbubble", "url": RB,      "tags": ["western","duvet","home-decor","bedroom","fantasy","women"]},
-    {"id": "w07", "title": "Steam Train Drawstring Bag",     "img": "/images/scraped_image_046.png", "store": "Redbubble", "url": RB,      "tags": ["western","train","bag","accessories","travel","gifts"]},
-    {"id": "w08", "title": "Western Era Whiskey Shower Curtain","img": "/images/scraped_image_065.png","store":"Redbubble","url":RB,       "tags": ["western","shower-curtain","bathroom","home-decor","vintage"]},
-    {"id": "w09", "title": "Wild West Sheriff Badge T-Shirt","img": "/images/scraped_image_042.png", "store": "Redbubble", "url": RB,      "tags": ["western","sheriff","t-shirt","apparel","men","cowboy"]},
-    {"id": "w10", "title": "Western Horse Rider Phone Case", "img": "/images/scraped_image_043.png", "store": "Redbubble", "url": RB,      "tags": ["western","phone-case","cowboy","horse","accessories","gifts"]},
-    {"id": "w11", "title": "Cowboy Hat Art Print",           "img": "/images/scraped_image_068.png", "store": "Redbubble", "url": RB,      "tags": ["western","wall-art","cowboy","print","home-decor","vintage"]},
-    {"id": "w12", "title": "Wild West Boot Leggings",        "img": "/images/scraped_image_035.png", "store": "Redbubble", "url": RB,      "tags": ["western","leggings","apparel","women","cowboy","fashion"]},
-    {"id": "w13", "title": "Western Bandana Scarf",          "img": "/images/scraped_image_032.png", "store": "Redbubble", "url": RB,      "tags": ["western","bandana","scarf","accessories","cowboy","fashion"]},
-    {"id": "w14", "title": "Native American Eagle Print",    "img": "/images/scraped_image_053.png", "store": "Redbubble", "url": RB,      "tags": ["native-american","eagle","wall-art","print","home-decor"]},
-    {"id": "w15", "title": "Wild West Stampede Duvet",       "img": "/images/scraped_image_060.png", "store": "Redbubble", "url": RB,      "tags": ["western","duvet","bedroom","home-decor","buffalo","wild-west"]},
-    {"id": "w16", "title": "Cowboy Rodeo Art Print",         "img": "/images/scraped_image_026.png", "store": "Redbubble", "url": RB,      "tags": ["western","rodeo","wall-art","cowboy","print","gifts"]},
-    {"id": "w17", "title": "Western Ranch Throw Pillow",     "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": RB,      "tags": ["western","pillow","home-decor","ranch","cowboy","gifts"]},
-    {"id": "w18", "title": "Sheriff Badge Wall Print",       "img": "/images/scraped_image_027.png", "store": "Redbubble", "url": RB,      "tags": ["western","sheriff","wall-art","print","cowboy","home-decor"]},
-    {"id": "w19", "title": "Native American Dreamcatcher",   "img": "/images/scraped_image_031.png", "store": "Redbubble", "url": RB,      "tags": ["native-american","dreamcatcher","wall-art","gifts","home-decor"]},
-    {"id": "w20", "title": "Wild West Throw Blanket",        "img": "/images/scraped_image_064.png", "store": "Redbubble", "url": RB,      "tags": ["western","blanket","home-decor","cowboy","gifts","cozy"]},
-    {"id": "w21", "title": "Western Boot Wall Decor",        "img": "/images/scraped_image_038.png", "store": "Redbubble", "url": RB,      "tags": ["western","boot","wall-art","home-decor","cowboy","country"]},
-    {"id": "w22", "title": "Cowboy Rodeo Floor Pillow",      "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": RB,      "tags": ["western","pillow","floor-pillow","cowboy","home-decor"]},
-    {"id": "w23", "title": "Wild West Buffalo Tapestry",     "img": "/images/scraped_image_022.png", "store": "Redbubble", "url": RB,      "tags": ["western","tapestry","wall-art","buffalo","home-decor"]},
-    {"id": "w24", "title": "Western Heritage Poster",        "img": "/images/scraped_image_051.png", "store": "Redbubble", "url": RB,      "tags": ["western","poster","wall-art","heritage","vintage","cowboy"]},
-    {"id": "w25", "title": "Cowboy Legend Wall Hanging",     "img": "/images/scraped_image_026.png", "store": "Redbubble", "url": RB,      "tags": ["western","wall-art","cowboy","hanging","home-decor","gifts"]},
+    {"id": "w01", "title": "Sheriff Badge Socks",               "img": "/images/scraped_image_001.png", "store": "Redbubble", "url": rb_url("Sheriff Badge Socks"),               "tags": ["western","cowboy","sheriff","socks","accessories","gifts"]},
+    {"id": "w02", "title": "Wild West Covered Wagon Pillow",    "img": "/images/scraped_image_005.png", "store": "Redbubble", "url": rb_url("Wild West Covered Wagon Pillow"),    "tags": ["western","cowboy","pillow","home-decor","wild-west","gifts"]},
+    {"id": "w03", "title": "Wild West Cowboy Boot Dress",       "img": "/images/scraped_image_016.png", "store": "Redbubble", "url": rb_url("Wild West Cowboy Boot Dress"),       "tags": ["western","cowboy","apparel","dress","women","fashion"]},
+    {"id": "w04", "title": "Indian Tomahawk Tapestry",          "img": "/images/scraped_image_018.png", "store": "Redbubble", "url": rb_url("Indian Tomahawk Tapestry"),          "tags": ["native-american","tapestry","wall-art","home-decor","western"]},
+    {"id": "w05", "title": "Cowboy & Indian Teepee Art",        "img": "/images/scraped_image_022.png", "store": "Redbubble", "url": rb_url("Cowboy Indian Teepee Art"),          "tags": ["western","native-american","wall-art","cowboy","gifts"]},
+    {"id": "w06", "title": "Western Lady Duvet Cover",          "img": "/images/scraped_image_004.png", "store": "Redbubble", "url": rb_url("Western Lady Duvet Cover"),          "tags": ["western","duvet","home-decor","bedroom","fantasy","women"]},
+    {"id": "w07", "title": "Steam Train Drawstring Bag",        "img": "/images/scraped_image_046.png", "store": "Redbubble", "url": rb_url("Steam Train Drawstring Bag"),        "tags": ["western","train","bag","accessories","travel","gifts"]},
+    {"id": "w08", "title": "Western Era Whiskey Shower Curtain","img": "/images/scraped_image_065.png", "store": "Redbubble", "url": rb_url("Western Era Whiskey Shower Curtain"),"tags": ["western","shower-curtain","bathroom","home-decor","vintage"]},
+    {"id": "w09", "title": "Wild West Sheriff Badge T-Shirt",   "img": "/images/scraped_image_042.png", "store": "Redbubble", "url": rb_url("Wild West Sheriff Badge T-Shirt"),   "tags": ["western","sheriff","t-shirt","apparel","men","cowboy"]},
+    {"id": "w10", "title": "Western Horse Rider Phone Case",    "img": "/images/scraped_image_043.png", "store": "Redbubble", "url": rb_url("Western Horse Rider Phone Case"),    "tags": ["western","phone-case","cowboy","horse","accessories","gifts"]},
+    {"id": "w11", "title": "Cowboy Hat Art Print",              "img": "/images/scraped_image_068.png", "store": "Redbubble", "url": rb_url("Cowboy Hat Art Print"),              "tags": ["western","wall-art","cowboy","print","home-decor","vintage"]},
+    {"id": "w12", "title": "Wild West Boot Leggings",           "img": "/images/scraped_image_035.png", "store": "Redbubble", "url": rb_url("Wild West Boot Leggings"),           "tags": ["western","leggings","apparel","women","cowboy","fashion"]},
+    {"id": "w13", "title": "Western Bandana Scarf",             "img": "/images/scraped_image_032.png", "store": "Redbubble", "url": rb_url("Western Bandana Scarf"),             "tags": ["western","bandana","scarf","accessories","cowboy","fashion"]},
+    {"id": "w14", "title": "Native American Eagle Print",       "img": "/images/scraped_image_053.png", "store": "Redbubble", "url": rb_url("Native American Eagle Print"),       "tags": ["native-american","eagle","wall-art","print","home-decor"]},
+    {"id": "w15", "title": "Wild West Stampede Duvet",          "img": "/images/scraped_image_060.png", "store": "Redbubble", "url": rb_url("Wild West Stampede Duvet"),          "tags": ["western","duvet","bedroom","home-decor","buffalo","wild-west"]},
+    {"id": "w16", "title": "Cowboy Rodeo Art Print",            "img": "/images/scraped_image_026.png", "store": "Redbubble", "url": rb_url("Cowboy Rodeo Art Print"),            "tags": ["western","rodeo","wall-art","cowboy","print","gifts"]},
+    {"id": "w17", "title": "Western Ranch Throw Pillow",        "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": rb_url("Western Ranch Throw Pillow"),        "tags": ["western","pillow","home-decor","ranch","cowboy","gifts"]},
+    {"id": "w18", "title": "Sheriff Badge Wall Print",          "img": "/images/scraped_image_027.png", "store": "Redbubble", "url": rb_url("Sheriff Badge Wall Print"),          "tags": ["western","sheriff","wall-art","print","cowboy","home-decor"]},
+    {"id": "w19", "title": "Native American Dreamcatcher",      "img": "/images/scraped_image_031.png", "store": "Redbubble", "url": rb_url("Native American Dreamcatcher"),      "tags": ["native-american","dreamcatcher","wall-art","gifts","home-decor"]},
+    {"id": "w20", "title": "Wild West Throw Blanket",           "img": "/images/scraped_image_064.png", "store": "Redbubble", "url": rb_url("Wild West Throw Blanket"),           "tags": ["western","blanket","home-decor","cowboy","gifts","cozy"]},
+    {"id": "w21", "title": "Western Boot Wall Decor",           "img": "/images/scraped_image_038.png", "store": "Redbubble", "url": rb_url("Western Boot Wall Decor"),           "tags": ["western","boot","wall-art","home-decor","cowboy","country"]},
+    {"id": "w22", "title": "Cowboy Rodeo Floor Pillow",         "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": rb_url("Cowboy Rodeo Floor Pillow"),         "tags": ["western","pillow","floor-pillow","cowboy","home-decor"]},
+    {"id": "w23", "title": "Wild West Buffalo Tapestry",        "img": "/images/scraped_image_022.png", "store": "Redbubble", "url": rb_url("Wild West Buffalo Tapestry"),        "tags": ["western","tapestry","wall-art","buffalo","home-decor"]},
+    {"id": "w24", "title": "Western Heritage Poster",           "img": "/images/scraped_image_051.png", "store": "Redbubble", "url": rb_url("Western Heritage Poster"),           "tags": ["western","poster","wall-art","heritage","vintage","cowboy"]},
+    {"id": "w25", "title": "Cowboy Legend Wall Hanging",        "img": "/images/scraped_image_026.png", "store": "Redbubble", "url": rb_url("Cowboy Legend Wall Hanging"),        "tags": ["western","wall-art","cowboy","hanging","home-decor","gifts"]},
 
     # ---- Graphic T-Shirts & Apparel (TeePublic) ----
-    {"id": "a01", "title": "Yin Yang Pink Mandala T-Shirt",  "img": "/images/scraped_image_002.png", "store": "TeePublic", "url": STORE_TP, "tags": ["yin-yang","mandala","t-shirt","apparel","spiritual","men","women"]},
-    {"id": "a02", "title": "Chess Dragon Crest T-Shirt",     "img": "/images/scraped_image_003.png", "store": "TeePublic", "url": STORE_TP, "tags": ["chess","dragon","t-shirt","apparel","fantasy","gifts"]},
-    {"id": "a03", "title": "Yin Yang Red Circle T-Shirt",    "img": "/images/scraped_image_007.png", "store": "TeePublic", "url": STORE_TP, "tags": ["yin-yang","t-shirt","apparel","spiritual","men","women","gifts"]},
-    {"id": "a04", "title": "Captain Scarlet & Blue T-Shirt", "img": "/images/scraped_image_009.png", "store": "TeePublic", "url": STORE_TP, "tags": ["sci-fi","t-shirt","apparel","retro","vintage","men","gifts"]},
-    {"id": "a05", "title": "Red Alien T-Shirt",              "img": "/images/scraped_image_010.png", "store": "TeePublic", "url": STORE_TP, "tags": ["alien","sci-fi","t-shirt","apparel","men","gifts","funny"]},
-    {"id": "a06", "title": "Space Planet Galaxy T-Shirt",    "img": "/images/scraped_image_011.png", "store": "TeePublic", "url": STORE_TP, "tags": ["space","galaxy","planet","t-shirt","apparel","sci-fi","men"]},
-    {"id": "a07", "title": "Colorful Swirl Vortex T-Shirt",  "img": "/images/scraped_image_013.png", "store": "TeePublic", "url": STORE_TP, "tags": ["psychedelic","swirl","t-shirt","apparel","colorful","abstract"]},
-    {"id": "a08", "title": "Gothic Alphabet T-Shirt",        "img": "/images/scraped_image_019.png", "store": "TeePublic", "url": STORE_TP, "tags": ["gothic","alphabet","t-shirt","apparel","dark","men","unique"]},
-    {"id": "a09", "title": "Alien Newbies T-Shirt",          "img": "/images/scraped_image_021.png", "store": "TeePublic", "url": STORE_TP, "tags": ["alien","funny","t-shirt","apparel","sci-fi","gifts","novelty"]},
-    {"id": "a10", "title": "Class of 2020 Vintage T-Shirt",  "img": "/images/scraped_image_074.png", "store": "TeePublic", "url": STORE_TP, "tags": ["graduation","class-of-2020","t-shirt","apparel","vintage","gifts"]},
-    {"id": "a11", "title": "Yin Yang Yellow Ball Pattern",   "img": "/images/scraped_image_020.png", "store": "TeePublic", "url": STORE_TP, "tags": ["yin-yang","t-shirt","apparel","spiritual","colorful","men"]},
-    {"id": "a12", "title": "Love Heart Rings T-Shirt",       "img": "/images/scraped_image_008.jpg", "store": "TeePublic", "url": STORE_TP, "tags": ["love","heart","t-shirt","apparel","romantic","women","gifts"]},
-    {"id": "a13", "title": "Triquetra Spiral Art T-Shirt",   "img": "/images/scraped_image_015.jpg", "store": "TeePublic", "url": STORE_TP, "tags": ["triquetra","celtic","t-shirt","apparel","spiritual","gifts"]},
-    {"id": "a14", "title": "Yin Yang Triple Ball T-Shirt",   "img": "/images/scraped_image_030.png", "store": "TeePublic", "url": STORE_TP, "tags": ["yin-yang","t-shirt","apparel","spiritual","pattern","men"]},
-    {"id": "a15", "title": "Sexy Light Blue T-Shirt",        "img": "/images/scraped_image_070.png", "store": "TeePublic", "url": STORE_TP, "tags": ["fashion","t-shirt","apparel","women","casual","blue"]},
-    {"id": "a16", "title": "Love Rainbow Heart T-Shirt",     "img": "/images/scraped_image_012.jpg", "store": "TeePublic", "url": STORE_TP, "tags": ["love","rainbow","heart","t-shirt","apparel","pride","women"]},
-    {"id": "a17", "title": "I Love Tennis T-Shirt",          "img": "/images/scraped_image_063.png", "store": "TeePublic", "url": STORE_TP, "tags": ["tennis","sports","t-shirt","apparel","gifts","men","women"]},
-    {"id": "a18", "title": "Trump 2020 Face Mask",           "img": "/images/scraped_image_044.png", "store": "TeePublic", "url": STORE_TP, "tags": ["political","face-mask","accessories","novelty","gifts"]},
-    {"id": "a19", "title": "Orange Glass Orb Globe T-Shirt", "img": "/images/scraped_image_057.png", "store": "TeePublic", "url": STORE_TP, "tags": ["abstract","digital-art","t-shirt","apparel","colorful","unique"]},
-    {"id": "a20", "title": "Cyber Punk Robot T-Shirt",       "img": "/images/scraped_image_072.png", "store": "TeePublic", "url": STORE_TP, "tags": ["cyberpunk","robot","sci-fi","t-shirt","apparel","men","tech"]},
-    {"id": "a21", "title": "Neon Pop Art T-Shirt",           "img": "/images/scraped_image_036.png", "store": "TeePublic", "url": STORE_TP, "tags": ["pop-art","neon","t-shirt","apparel","colorful","abstract","men"]},
-    {"id": "a22", "title": "Abstract Digital Art T-Shirt",   "img": "/images/scraped_image_037.png", "store": "TeePublic", "url": STORE_TP, "tags": ["abstract","digital-art","t-shirt","apparel","colorful","unique"]},
-    {"id": "a23", "title": "Retro Space Shuttle T-Shirt",    "img": "/images/scraped_image_077.png", "store": "TeePublic", "url": STORE_TP, "tags": ["space","retro","shuttle","t-shirt","apparel","sci-fi","men"]},
-    {"id": "a24", "title": "Birthday Vintage Year T-Shirt",  "img": "/images/scraped_image_025.png", "store": "TeePublic", "url": STORE_TP, "tags": ["birthday","vintage","t-shirt","apparel","gifts","men","women"]},
-    {"id": "a25", "title": "Psychedelic Circle T-Shirt",     "img": "/images/scraped_image_039.jpg", "store": "TeePublic", "url": STORE_TP, "tags": ["psychedelic","circle","t-shirt","apparel","colorful","abstract"]},
-    {"id": "a26", "title": "Colorful Fractal Art T-Shirt",   "img": "/images/scraped_image_055.png", "store": "TeePublic", "url": STORE_TP, "tags": ["fractal","digital-art","t-shirt","apparel","colorful","abstract"]},
-    {"id": "a27", "title": "Digital Wave Art T-Shirt",       "img": "/images/scraped_image_061.png", "store": "TeePublic", "url": STORE_TP, "tags": ["digital-art","wave","t-shirt","apparel","abstract","colorful"]},
-    {"id": "a28", "title": "Bright Bloom T-Shirt",           "img": "/images/scraped_image_067.png", "store": "TeePublic", "url": STORE_TP, "tags": ["floral","bright","t-shirt","apparel","women","colorful","gifts"]},
-    {"id": "a29", "title": "Blue Star Network T-Shirt",      "img": "/images/scraped_image_045.png", "store": "TeePublic", "url": STORE_TP, "tags": ["sci-fi","star","network","t-shirt","apparel","abstract","men"]},
-    {"id": "a30", "title": "Artistic Dragon T-Shirt",        "img": "/images/scraped_image_058.png", "store": "TeePublic", "url": STORE_TP, "tags": ["dragon","fantasy","t-shirt","apparel","men","gifts","art"]},
-    {"id": "a31", "title": "Tribal Pattern T-Shirt",         "img": "/images/scraped_image_059.png", "store": "TeePublic", "url": STORE_TP, "tags": ["tribal","pattern","t-shirt","apparel","ethnic","men","women"]},
-    {"id": "a32", "title": "Geometric Art T-Shirt",          "img": "/images/scraped_image_066.png", "store": "TeePublic", "url": STORE_TP, "tags": ["geometric","abstract","t-shirt","apparel","modern","men","women"]},
+    {"id": "a01", "title": "Yin Yang Pink Mandala T-Shirt",     "img": "/images/scraped_image_002.png", "store": "TeePublic", "url": tp_url("Yin Yang Pink Mandala"),     "tags": ["yin-yang","mandala","t-shirt","apparel","spiritual","men","women"]},
+    {"id": "a02", "title": "Chess Dragon Crest T-Shirt",        "img": "/images/scraped_image_003.png", "store": "TeePublic", "url": tp_url("Chess Dragon Crest"),        "tags": ["chess","dragon","t-shirt","apparel","fantasy","gifts"]},
+    {"id": "a03", "title": "Yin Yang Red Circle T-Shirt",       "img": "/images/scraped_image_007.png", "store": "TeePublic", "url": tp_url("Yin Yang Red Circle"),       "tags": ["yin-yang","t-shirt","apparel","spiritual","men","women","gifts"]},
+    {"id": "a04", "title": "Captain Scarlet & Blue T-Shirt",    "img": "/images/scraped_image_009.png", "store": "TeePublic", "url": tp_url("Captain Scarlet Blue"),      "tags": ["sci-fi","t-shirt","apparel","retro","vintage","men","gifts"]},
+    {"id": "a05", "title": "Red Alien T-Shirt",                 "img": "/images/scraped_image_010.png", "store": "TeePublic", "url": tp_url("Red Alien"),                 "tags": ["alien","sci-fi","t-shirt","apparel","men","gifts","funny"]},
+    {"id": "a06", "title": "Space Planet Galaxy T-Shirt",       "img": "/images/scraped_image_011.png", "store": "TeePublic", "url": tp_url("Space Planet Galaxy"),       "tags": ["space","galaxy","planet","t-shirt","apparel","sci-fi","men"]},
+    {"id": "a07", "title": "Colorful Swirl Vortex T-Shirt",     "img": "/images/scraped_image_013.png", "store": "TeePublic", "url": tp_url("Colorful Swirl Vortex"),     "tags": ["psychedelic","swirl","t-shirt","apparel","colorful","abstract"]},
+    {"id": "a08", "title": "Gothic Alphabet T-Shirt",           "img": "/images/scraped_image_019.png", "store": "TeePublic", "url": tp_url("Gothic Alphabet"),           "tags": ["gothic","alphabet","t-shirt","apparel","dark","men","unique"]},
+    {"id": "a09", "title": "Alien Newbies T-Shirt",             "img": "/images/scraped_image_021.png", "store": "TeePublic", "url": tp_url("Alien Newbies"),             "tags": ["alien","funny","t-shirt","apparel","sci-fi","gifts","novelty"]},
+    {"id": "a10", "title": "Class of 2020 Vintage T-Shirt",     "img": "/images/scraped_image_074.png", "store": "TeePublic", "url": tp_url("Class of 2020"),             "tags": ["graduation","class-of-2020","t-shirt","apparel","vintage","gifts"]},
+    {"id": "a11", "title": "Yin Yang Yellow Ball Pattern",       "img": "/images/scraped_image_020.png", "store": "TeePublic", "url": tp_url("Yin Yang Yellow Ball"),      "tags": ["yin-yang","t-shirt","apparel","spiritual","colorful","men"]},
+    {"id": "a12", "title": "Love Heart Rings T-Shirt",          "img": "/images/scraped_image_008.jpg", "store": "TeePublic", "url": tp_url("Love Heart Rings"),          "tags": ["love","heart","t-shirt","apparel","romantic","women","gifts"]},
+    {"id": "a13", "title": "Triquetra Spiral Art T-Shirt",      "img": "/images/scraped_image_015.jpg", "store": "TeePublic", "url": tp_url("Triquetra Spiral"),          "tags": ["triquetra","celtic","t-shirt","apparel","spiritual","gifts"]},
+    {"id": "a14", "title": "Yin Yang Triple Ball T-Shirt",      "img": "/images/scraped_image_030.png", "store": "TeePublic", "url": tp_url("Yin Yang Triple Ball"),      "tags": ["yin-yang","t-shirt","apparel","spiritual","pattern","men"]},
+    {"id": "a15", "title": "Sexy Light Blue T-Shirt",           "img": "/images/scraped_image_070.png", "store": "TeePublic", "url": tp_url("Sexy Light Blue"),           "tags": ["fashion","t-shirt","apparel","women","casual","blue"]},
+    {"id": "a16", "title": "Love Rainbow Heart T-Shirt",        "img": "/images/scraped_image_012.jpg", "store": "TeePublic", "url": tp_url("Love Rainbow Heart"),        "tags": ["love","rainbow","heart","t-shirt","apparel","pride","women"]},
+    {"id": "a17", "title": "I Love Tennis T-Shirt",             "img": "/images/scraped_image_063.png", "store": "TeePublic", "url": tp_url("I Love Tennis"),             "tags": ["tennis","sports","t-shirt","apparel","gifts","men","women"]},
+    {"id": "a18", "title": "Trump 2020 Face Mask",              "img": "/images/scraped_image_044.png", "store": "TeePublic", "url": tp_url("Trump 2020"),                "tags": ["political","face-mask","accessories","novelty","gifts"]},
+    {"id": "a19", "title": "Orange Glass Orb Globe T-Shirt",    "img": "/images/scraped_image_057.png", "store": "TeePublic", "url": tp_url("Orange Glass Orb"),          "tags": ["abstract","digital-art","t-shirt","apparel","colorful","unique"]},
+    {"id": "a20", "title": "Cyber Punk Robot T-Shirt",          "img": "/images/scraped_image_072.png", "store": "TeePublic", "url": tp_url("Cyber Punk Robot"),          "tags": ["cyberpunk","robot","sci-fi","t-shirt","apparel","men","tech"]},
+    {"id": "a21", "title": "Neon Pop Art T-Shirt",              "img": "/images/scraped_image_036.png", "store": "TeePublic", "url": tp_url("Neon Pop Art"),              "tags": ["pop-art","neon","t-shirt","apparel","colorful","abstract","men"]},
+    {"id": "a22", "title": "Abstract Digital Art T-Shirt",      "img": "/images/scraped_image_037.png", "store": "TeePublic", "url": tp_url("Abstract Digital Art"),      "tags": ["abstract","digital-art","t-shirt","apparel","colorful","unique"]},
+    {"id": "a23", "title": "Retro Space Shuttle T-Shirt",       "img": "/images/scraped_image_077.png", "store": "TeePublic", "url": tp_url("Retro Space Shuttle"),       "tags": ["space","retro","shuttle","t-shirt","apparel","sci-fi","men"]},
+    {"id": "a24", "title": "Birthday Vintage Year T-Shirt",     "img": "/images/scraped_image_025.png", "store": "TeePublic", "url": tp_url("Birthday Vintage Year"),     "tags": ["birthday","vintage","t-shirt","apparel","gifts","men","women"]},
+    {"id": "a25", "title": "Psychedelic Circle T-Shirt",        "img": "/images/scraped_image_039.jpg", "store": "TeePublic", "url": tp_url("Psychedelic Circle"),        "tags": ["psychedelic","circle","t-shirt","apparel","colorful","abstract"]},
+    {"id": "a26", "title": "Colorful Fractal Art T-Shirt",      "img": "/images/scraped_image_055.png", "store": "TeePublic", "url": tp_url("Colorful Fractal Art"),      "tags": ["fractal","digital-art","t-shirt","apparel","colorful","abstract"]},
+    {"id": "a27", "title": "Digital Wave Art T-Shirt",          "img": "/images/scraped_image_061.png", "store": "TeePublic", "url": tp_url("Digital Wave Art"),          "tags": ["digital-art","wave","t-shirt","apparel","abstract","colorful"]},
+    {"id": "a28", "title": "Bright Bloom T-Shirt",              "img": "/images/scraped_image_067.png", "store": "TeePublic", "url": tp_url("Bright Bloom"),              "tags": ["floral","bright","t-shirt","apparel","women","colorful","gifts"]},
+    {"id": "a29", "title": "Blue Star Network T-Shirt",         "img": "/images/scraped_image_045.png", "store": "TeePublic", "url": tp_url("Blue Star Network"),         "tags": ["sci-fi","star","network","t-shirt","apparel","abstract","men"]},
+    {"id": "a30", "title": "Artistic Dragon T-Shirt",           "img": "/images/scraped_image_058.png", "store": "TeePublic", "url": tp_url("Artistic Dragon"),           "tags": ["dragon","fantasy","t-shirt","apparel","men","gifts","art"]},
+    {"id": "a31", "title": "Tribal Pattern T-Shirt",            "img": "/images/scraped_image_059.png", "store": "TeePublic", "url": tp_url("Tribal Pattern"),            "tags": ["tribal","pattern","t-shirt","apparel","ethnic","men","women"]},
+    {"id": "a32", "title": "Geometric Art T-Shirt",             "img": "/images/scraped_image_066.png", "store": "TeePublic", "url": tp_url("Geometric Art"),             "tags": ["geometric","abstract","t-shirt","apparel","modern","men","women"]},
 
     # ---- Home Decor & Wall Art (Redbubble + TeePublic) ----
-    {"id": "d01", "title": "Western Lady Fantasy Duvet Cover","img":"/images/scraped_image_004.png","store":"Redbubble","url":RB,          "tags": ["western","duvet","bedroom","home-decor","fantasy","women"]},
-    {"id": "d02", "title": "Indian Tomahawk Wall Tapestry",   "img":"/images/scraped_image_018.png","store":"Redbubble","url":RB,          "tags": ["native-american","tapestry","wall-art","home-decor","western"]},
-    {"id": "d03", "title": "Wild West Wagon Floor Pillow",    "img":"/images/scraped_image_005.png","store":"Redbubble","url":RB,          "tags": ["western","floor-pillow","home-decor","cowboy","wild-west"]},
-    {"id": "d04", "title": "Western Era Shower Curtain",      "img":"/images/scraped_image_065.png","store":"Redbubble","url":RB,          "tags": ["western","shower-curtain","bathroom","home-decor","vintage"]},
-    {"id": "d05", "title": "Chess Piece Art Poster",          "img":"/images/scraped_image_076.png","store":"TeePublic","url":STORE_TP,    "tags": ["chess","poster","wall-art","home-decor","gifts","games"]},
-    {"id": "d06", "title": "Orange Glass Globe Ornament",     "img":"/images/scraped_image_057.png","store":"TeePublic","url":STORE_TP,    "tags": ["abstract","ornament","home-decor","colorful","gifts","unique"]},
-    {"id": "d07", "title": "Colorful Spiral Wall Art",        "img":"/images/scraped_image_041.png","store":"Redbubble","url":RB,          "tags": ["spiral","wall-art","home-decor","colorful","abstract","print"]},
-    {"id": "d08", "title": "Psychedelic Home Decor Print",    "img":"/images/scraped_image_078.png","store":"Redbubble","url":RB,          "tags": ["psychedelic","print","wall-art","home-decor","colorful","abstract"]},
-    {"id": "d09", "title": "Abstract Art Canvas Print",       "img":"/images/scraped_image_050.png","store":"Redbubble","url":RB,          "tags": ["abstract","canvas","wall-art","home-decor","modern","print"]},
-    {"id": "d10", "title": "Wild West Throw Blanket",         "img":"/images/scraped_image_064.png","store":"Redbubble","url":RB,          "tags": ["western","blanket","home-decor","cowboy","cozy","gifts"]},
-    {"id": "d11", "title": "Vintage Western Poster",          "img":"/images/scraped_image_068.png","store":"Redbubble","url":RB,          "tags": ["western","vintage","poster","wall-art","cowboy","home-decor"]},
-    {"id": "d12", "title": "Western Ranch Floor Pillow",      "img":"/images/scraped_image_041.png","store":"Redbubble","url":RB,          "tags": ["western","floor-pillow","home-decor","ranch","cowboy"]},
-    {"id": "d13", "title": "Buffalo Stampede Wall Art",       "img":"/images/scraped_image_022.png","store":"Redbubble","url":RB,          "tags": ["western","buffalo","wall-art","home-decor","wild-west","print"]},
-    {"id": "d14", "title": "Abstract Digital Canvas",         "img":"/images/scraped_image_079.png","store":"Redbubble","url":RB,          "tags": ["abstract","digital-art","canvas","wall-art","home-decor","modern"]},
-    {"id": "d15", "title": "Native Eagle Feather Print",      "img":"/images/scraped_image_053.png","store":"Redbubble","url":RB,          "tags": ["native-american","eagle","feather","print","wall-art","home-decor"]},
-    {"id": "d16", "title": "Rodeo Art Duvet Cover",           "img":"/images/scraped_image_060.png","store":"Redbubble","url":RB,          "tags": ["western","rodeo","duvet","bedroom","home-decor","cowboy"]},
-    {"id": "d17", "title": "Geometric Wall Print",            "img":"/images/scraped_image_050.png","store":"Redbubble","url":RB,          "tags": ["geometric","wall-art","home-decor","modern","print","abstract"]},
-    {"id": "d18", "title": "Colorful Spiral Poster",          "img":"/images/scraped_image_041.png","store":"Redbubble","url":RB,          "tags": ["spiral","poster","wall-art","colorful","abstract","home-decor"]},
-    {"id": "d19", "title": "Western Boot Throw Pillow",       "img":"/images/scraped_image_038.png","store":"Redbubble","url":RB,          "tags": ["western","boot","pillow","home-decor","cowboy","gifts"]},
-    {"id": "d20", "title": "Classic Western Art Poster",      "img":"/images/scraped_image_051.png","store":"Redbubble","url":RB,          "tags": ["western","poster","wall-art","classic","home-decor","vintage"]},
-    {"id": "d21", "title": "Cowboy Rope Art Print",           "img":"/images/scraped_image_026.png","store":"Redbubble","url":RB,          "tags": ["western","cowboy","rope","wall-art","print","home-decor"]},
-    {"id": "d22", "title": "Dreamcatcher Wall Hanging",       "img":"/images/scraped_image_031.png","store":"Redbubble","url":RB,          "tags": ["native-american","dreamcatcher","wall-hanging","home-decor","gifts"]},
-    {"id": "d23", "title": "Western Country Tapestry",        "img":"/images/scraped_image_018.png","store":"Redbubble","url":RB,          "tags": ["western","country","tapestry","wall-art","home-decor","large"]},
+    {"id": "d01", "title": "Western Lady Fantasy Duvet Cover",  "img": "/images/scraped_image_004.png", "store": "Redbubble", "url": rb_url("Western Lady Fantasy Duvet Cover"),  "tags": ["western","duvet","bedroom","home-decor","fantasy","women"]},
+    {"id": "d02", "title": "Indian Tomahawk Wall Tapestry",     "img": "/images/scraped_image_018.png", "store": "Redbubble", "url": rb_url("Indian Tomahawk Wall Tapestry"),     "tags": ["native-american","tapestry","wall-art","home-decor","western"]},
+    {"id": "d03", "title": "Wild West Wagon Floor Pillow",      "img": "/images/scraped_image_005.png", "store": "Redbubble", "url": rb_url("Wild West Wagon Floor Pillow"),      "tags": ["western","floor-pillow","home-decor","cowboy","wild-west"]},
+    {"id": "d04", "title": "Western Era Shower Curtain",        "img": "/images/scraped_image_065.png", "store": "Redbubble", "url": rb_url("Western Era Shower Curtain"),        "tags": ["western","shower-curtain","bathroom","home-decor","vintage"]},
+    {"id": "d05", "title": "Chess Piece Art Poster",            "img": "/images/scraped_image_076.png", "store": "TeePublic", "url": tp_url("Chess Piece Art Poster"),            "tags": ["chess","poster","wall-art","home-decor","gifts","games"]},
+    {"id": "d06", "title": "Orange Glass Globe Ornament",       "img": "/images/scraped_image_057.png", "store": "TeePublic", "url": tp_url("Orange Glass Globe Ornament"),       "tags": ["abstract","ornament","home-decor","colorful","gifts","unique"]},
+    {"id": "d07", "title": "Colorful Spiral Wall Art",          "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": rb_url("Colorful Spiral Wall Art"),          "tags": ["spiral","wall-art","home-decor","colorful","abstract","print"]},
+    {"id": "d08", "title": "Psychedelic Home Decor Print",      "img": "/images/scraped_image_078.png", "store": "Redbubble", "url": rb_url("Psychedelic Home Decor Print"),      "tags": ["psychedelic","print","wall-art","home-decor","colorful","abstract"]},
+    {"id": "d09", "title": "Abstract Art Canvas Print",         "img": "/images/scraped_image_050.png", "store": "Redbubble", "url": rb_url("Abstract Art Canvas Print"),         "tags": ["abstract","canvas","wall-art","home-decor","modern","print"]},
+    {"id": "d10", "title": "Wild West Throw Blanket",           "img": "/images/scraped_image_064.png", "store": "Redbubble", "url": rb_url("Wild West Throw Blanket"),           "tags": ["western","blanket","home-decor","cowboy","cozy","gifts"]},
+    {"id": "d11", "title": "Vintage Western Poster",            "img": "/images/scraped_image_068.png", "store": "Redbubble", "url": rb_url("Vintage Western Poster"),            "tags": ["western","vintage","poster","wall-art","cowboy","home-decor"]},
+    {"id": "d12", "title": "Western Ranch Floor Pillow",        "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": rb_url("Western Ranch Floor Pillow"),        "tags": ["western","floor-pillow","home-decor","ranch","cowboy"]},
+    {"id": "d13", "title": "Buffalo Stampede Wall Art",         "img": "/images/scraped_image_022.png", "store": "Redbubble", "url": rb_url("Buffalo Stampede Wall Art"),         "tags": ["western","buffalo","wall-art","home-decor","wild-west","print"]},
+    {"id": "d14", "title": "Abstract Digital Canvas",           "img": "/images/scraped_image_079.png", "store": "Redbubble", "url": rb_url("Abstract Digital Canvas"),           "tags": ["abstract","digital-art","canvas","wall-art","home-decor","modern"]},
+    {"id": "d15", "title": "Native Eagle Feather Print",        "img": "/images/scraped_image_053.png", "store": "Redbubble", "url": rb_url("Native Eagle Feather Print"),        "tags": ["native-american","eagle","feather","print","wall-art","home-decor"]},
+    {"id": "d16", "title": "Rodeo Art Duvet Cover",             "img": "/images/scraped_image_060.png", "store": "Redbubble", "url": rb_url("Rodeo Art Duvet Cover"),             "tags": ["western","rodeo","duvet","bedroom","home-decor","cowboy"]},
+    {"id": "d17", "title": "Geometric Wall Print",              "img": "/images/scraped_image_050.png", "store": "Redbubble", "url": rb_url("Geometric Wall Print"),              "tags": ["geometric","wall-art","home-decor","modern","print","abstract"]},
+    {"id": "d18", "title": "Colorful Spiral Poster",            "img": "/images/scraped_image_041.png", "store": "Redbubble", "url": rb_url("Colorful Spiral Poster"),            "tags": ["spiral","poster","wall-art","colorful","abstract","home-decor"]},
+    {"id": "d19", "title": "Western Boot Throw Pillow",         "img": "/images/scraped_image_038.png", "store": "Redbubble", "url": rb_url("Western Boot Throw Pillow"),         "tags": ["western","boot","pillow","home-decor","cowboy","gifts"]},
+    {"id": "d20", "title": "Classic Western Art Poster",        "img": "/images/scraped_image_051.png", "store": "Redbubble", "url": rb_url("Classic Western Art Poster"),        "tags": ["western","poster","wall-art","classic","home-decor","vintage"]},
+    {"id": "d21", "title": "Cowboy Rope Art Print",             "img": "/images/scraped_image_026.png", "store": "Redbubble", "url": rb_url("Cowboy Rope Art Print"),             "tags": ["western","cowboy","rope","wall-art","print","home-decor"]},
+    {"id": "d22", "title": "Dreamcatcher Wall Hanging",         "img": "/images/scraped_image_031.png", "store": "Redbubble", "url": rb_url("Dreamcatcher Wall Hanging"),         "tags": ["native-american","dreamcatcher","wall-hanging","home-decor","gifts"]},
+    {"id": "d23", "title": "Western Country Tapestry",          "img": "/images/scraped_image_018.png", "store": "Redbubble", "url": rb_url("Western Country Tapestry"),          "tags": ["western","country","tapestry","wall-art","home-decor","large"]},
 ]
 
 # ===========================================================================
