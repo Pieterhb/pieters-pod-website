@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url><loc>https://pod.softcoverbooks.co.za/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2026-08-16</lastmod></url>
+
+  <!-- Section hubs -->
+  <url><loc>https://pod.softcoverbooks.co.za/designs/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://pod.softcoverbooks.co.za/collections/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://pod.softcoverbooks.co.za/gifts/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://pod.softcoverbooks.co.za/products/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://pod.softcoverbooks.co.za/rooms/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-08-16</lastmod></url>
+  <url><loc>https://pod.softcoverbooks.co.za/themes/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-08-16</lastmod></url>
+</urlset>

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Sitemap Index — submit sitemap_index.xml to Google Search Console -->
-<!-- All sub-sitemaps are listed there for faster sectioned crawling -->
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://pod.softcoverbooks.co.za/sitemap_main.xml</loc>
