@@ -17,25 +17,40 @@ function tpUrl(title)  { return TP_BASE  + encodeURIComponent(title); }
 const navLinks = document.querySelectorAll('nav a, .nav-btn, .logo, .nav-btn-footer');
 const views = document.querySelectorAll('.view');
 
-function navigateTo(targetId) {
+function navigateTo(targetId, updateHash = true) {
   views.forEach(view => {
     view.classList.toggle('active', view.id === targetId);
   });
-  document.querySelectorAll('nav a').forEach(link => {
+  document.querySelectorAll('nav a, .logo').forEach(link => {
     link.classList.toggle('active', link.dataset.target === targetId);
   });
+  if (updateHash && window.location.hash !== '#' + targetId) {
+    history.pushState(null, '', '#' + targetId);
+  }
   window.scrollTo(0, 0);
+}
+
+function handleHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.getElementById(hash)) {
+    navigateTo(hash, false);
+  } else {
+    navigateTo('home', false);
+  }
 }
 
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
-    const target = link.dataset.target;
-    if (target) {
+    const target = link.dataset.target || (link.getAttribute('href') || '').replace('#', '');
+    if (target && document.getElementById(target)) {
       e.preventDefault();
-      navigateTo(target);
+      navigateTo(target, true);
     }
   });
 });
+
+window.addEventListener('hashchange', handleHash);
+window.addEventListener('popstate', handleHash);
 
 // =====================================================
 // WESTERN & COUNTRY ART - Redbubble Store
@@ -150,13 +165,13 @@ function createCard(product) {
   return `
     <article class="card">
       <div class="card-img-container">
-        <img src="${product.img}" alt="${product.title}" loading="lazy">
+        <img src="${product.img}" alt="${product.title}" width="400" height="400" loading="lazy">
         <span class="store-badge ${storeBadgeClass}">${product.store}</span>
       </div>
       <div class="card-content">
         <h3>${product.title}</h3>
         <p>Available exclusively on ${product.store}. Click below to view sizing, colors, and pricing.</p>
-        <a href="${product.url}" target="_blank" rel="noopener" class="btn">View on ${product.store}</a>
+        <a href="${product.url}" target="_blank" rel="nofollow noopener noreferrer" class="btn">View on ${product.store}</a>
       </div>
     </article>
   `;
@@ -196,8 +211,6 @@ function setupFilters() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-  renderGrid('western-grid', westernProducts);
-  renderGrid('apparel-grid', apparelProducts);
-  renderGrid('decor-grid', decorProducts);
+  handleHash();
   setupFilters();
 });

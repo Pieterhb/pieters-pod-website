@@ -122,7 +122,12 @@ main {
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
-.section-header h1 { margin-bottom: 0.75rem; }
+.section-header h1,
+.section-header h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
 .section-header p { max-width: 800px; font-size: 1.1rem; }
 
 /* ========== HERO ========== */
