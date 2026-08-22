@@ -1,5 +1,13 @@
-# Cloudflare Pages routing rules
-# Static pages and pSEO pages are served directly from their HTML files.
-# Non-existent routes return 404.html with status 404.
+# Cloudflare Pages routing & redirect rules
 
+# Legacy sitemap redirects (301 Permanent)
+/sitemap_index.xml        /sitemap.xml    301
+/sitemap_main.xml         /sitemap.xml    301
+/sitemap_collections.xml  /sitemap.xml    301
+/sitemap_designs.xml      /sitemap.xml    301
+/sitemap_gifts.xml        /sitemap.xml    301
+/sitemap_products.xml     /sitemap.xml    301
+/sitemap_rooms_themes.xml /sitemap.xml    301
+
+# Non-existent routes return custom 404
 /*    /404.html    404

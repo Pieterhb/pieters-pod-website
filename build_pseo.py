@@ -1569,6 +1569,172 @@ def products_by_ids(ids):
     return [prod_map[i] for i in ids if i in prod_map]
 
 
+def get_guide_content(page, products):
+    """Generates rich buyer, styling, and design notes for the page."""
+    section = page.get("section", "")
+    slug = page.get("slug", "")
+    title = page.get("breadcrumb_label", page.get("title", ""))
+    
+    is_apparel = any(kw in slug or kw in section for kw in ["tee", "shirt", "apparel", "legging", "fashion"])
+    is_decor = any(kw in slug or kw in section for kw in ["pillow", "duvet", "decor", "curtain", "room", "home", "bedroom", "living"])
+    is_wall = any(kw in slug or kw in section for kw in ["art", "print", "poster", "canvas", "tapestry", "wall", "native"])
+    is_western = any(kw in slug for kw in ["western", "cowboy", "sheriff", "ranch", "horse", "boot"])
+    
+    cards = []
+    
+    # Card 1: Design Aesthetics & Story
+    if is_western:
+        cards.append({
+            "title": "Frontier & Western Aesthetic",
+            "text": f"The {title} collection draws direct inspiration from historic frontier iconography — weathered leather tones, dusty plains, sheriff star insignia, and the timeless spirit of cowboy life. Each piece blends classic Americana with crisp digital illustration."
+        })
+    elif any(kw in slug for kw in ["sci-fi", "space", "alien", "cyberpunk"]):
+        cards.append({
+            "title": "Futuristic & Sci-Fi Art Direction",
+            "text": f"Exploring retro-futurism, deep space cosmology, and cyberpunk neon themes, the {title} series combines vivid contrast with intricate line art for fans of speculative fiction, gaming, and astronomical wonders."
+        })
+    elif any(kw in slug for kw in ["spiritual", "yin-yang", "mandala"]):
+        cards.append({
+            "title": "Sacred Geometry & Spiritual Balance",
+            "text": f"Featuring harmonious circular symmetries, ancient yin-yang motifs, and detailed mandala geometry, {title} brings visual serenity and mindful aesthetic balance to everyday wear and living spaces."
+        })
+    else:
+        cards.append({
+            "title": "Original Digital Artistry",
+            "text": f"Each concept in the {title} showcase is created with precision digital vector and raster illustration techniques, ensuring vibrant color saturation, sharp edges, and unique visual personality."
+        })
+        
+    # Card 2: Material & Print Quality
+    if is_apparel:
+        cards.append({
+            "title": "Premium Fabrics & Enduring Comfort",
+            "text": "Printed on heavyweight ring-spun cotton and breathable cotton blends using eco-conscious water-based Direct-to-Garment inks. Double-stitched seams and pre-shrunk fabrics maintain shape and softness through countless washes."
+        })
+    elif is_decor:
+        cards.append({
+            "title": "Archival Materials & Fade Resistance",
+            "text": "Home decor items utilize high-density spun polyester and soft microfiber with full edge-to-edge dye sublimation. Colors penetrate deeply into the fibers for rich contrast that resists sunlight fading and everyday wear."
+        })
+    elif is_wall:
+        cards.append({
+            "title": "Museum-Grade Art Substrates",
+            "text": "Available as fine art giclée prints on heavy archival matte stock and durable poly-blend woven tapestries. Specially formulated pigment inks reproduce subtle gradients and deep shadows with gallery clarity."
+        })
+    else:
+        cards.append({
+            "title": "On-Demand Craftsmanship",
+            "text": "Every product is custom printed upon ordering by certified global print partners, preventing overproduction waste while delivering top-tier print consistency and quality checks."
+        })
+        
+    # Card 3: Styling, Placement & Gift Advice
+    if is_decor or "room" in section:
+        cards.append({
+            "title": "Interior Styling Recommendations",
+            "text": "Pair these focal pieces with warm neutrals, textured wood or metal accents, and complementary lighting. Mixing framed prints with accent pillows or tapestries creates layered visual depth in bedrooms, living rooms, and offices."
+        })
+    elif is_apparel:
+        cards.append({
+            "title": "Wardrobe & Everyday Styling",
+            "text": "Versatile graphic statements that pair effortlessly with denim, leather jackets, casual overshirts, and streetwear. Available in classic dark, vintage heather, and bold bright colorways."
+        })
+    else:
+        cards.append({
+            "title": "Curated Gift Appeal",
+            "text": "Ideal for birthdays, housewarmings, holidays, and collector milestones. Independent artist prints offer a memorable, personal touch that standard commercial gifts cannot match."
+        })
+        
+    return cards
+
+
+def get_page_faqs(page, products):
+    """Returns a list of {question, answer} dicts tailored to the page."""
+    section = page.get("section", "")
+    slug = page.get("slug", "")
+    title = page.get("breadcrumb_label", page.get("title", ""))
+    
+    is_apparel = any(kw in slug or kw in section for kw in ["tee", "shirt", "apparel", "legging", "fashion"])
+    is_pillow = "pillow" in slug
+    is_duvet = "duvet" in slug or "bedroom" in slug
+    is_wall_art = any(kw in slug for kw in ["art", "print", "poster", "canvas", "tapestry", "wall"])
+    is_gift = section == "gifts" or "gift" in slug
+    
+    faqs = []
+    
+    # FAQ 1: Print & Fulfillment Quality
+    faqs.append({
+        "question": f"How are items in the {title} collection printed and fulfilled?",
+        "answer": f"Every item in Pieter's {title} collection is printed on demand using state-of-the-art Direct-to-Garment (DTG) or dye-sublimation printing through Redbubble and TeePublic. This ensures sharp, rich colors, intricate linework, and archival inks that resist fading and washing wear."
+    })
+    
+    # FAQ 2: Product Care / Sizing / Specifications
+    if is_apparel:
+        faqs.append({
+            "question": "What sizes and apparel materials are available?",
+            "answer": "Apparel items are available in standard unisex, men's, and women's cuts ranging from Small to 5XL (depending on garment style). T-shirts are crafted from 100% pre-shrunk ring-spun cotton or ultra-soft cotton-poly blends. Check the sizing guide on the product page for exact chest and length measurements."
+        })
+        faqs.append({
+            "question": "How should I wash and care for graphic tees and leggings?",
+            "answer": "To preserve vibrant print colors, machine wash garments inside-out in cold water with similar colors. Use mild detergent and tumble dry on low or hang dry. Avoid ironing directly on the printed design areas."
+        })
+    elif is_pillow:
+        faqs.append({
+            "question": "What sizes and materials are used for western throw pillows?",
+            "answer": "Throw pillows are available with double-sided original art prints on 100% spun polyester poplin fabric. Sizes typically range from 16x16 inches up to 20x20 inches, as well as oversized floor pillow options. They feature concealed zippers and resilient polyester inserts."
+        })
+        faqs.append({
+            "question": "Are the throw pillow covers machine washable?",
+            "answer": "Yes. The pillow covers can be unzipped, removed from the insert, and machine washed in cold water on a gentle cycle. Air dry or tumble dry low for best longevity."
+        })
+    elif is_duvet:
+        faqs.append({
+            "question": "What bed sizes do duvet covers accommodate?",
+            "answer": "Duvet covers are available in Twin, Twin XL, Queen, and King sizes. They are constructed from lightweight, ultra-soft brushed polyester microfiber with a concealed zipper closure and interior corner ties to secure your comforter insert."
+        })
+        faqs.append({
+            "question": "How do I clean and maintain bedding and duvets?",
+            "answer": "Machine wash in cold water on a gentle cycle with mild detergent. Tumble dry on low heat. The dye-sublimation print process embeds color directly into the fibers, preventing peeling or fading over repeated washes."
+        })
+    elif is_wall_art:
+        faqs.append({
+            "question": "What formats and paper finishes are available for wall art?",
+            "answer": "Designs are available as fine art prints on heavyweight museum-grade archival paper, canvas gallery wraps with sturdy pine frames, large format woven polyester tapestries, and vibrant poster prints."
+        })
+        faqs.append({
+            "question": "How do I hang and display posters and tapestries?",
+            "answer": "Art prints and posters fit standard frame sizes widely available at home decor stores. Wall tapestries are lightweight and can be displayed using decorative command strips, drapery clips, or small finishing nails without damaging drywall."
+        })
+    elif is_gift:
+        faqs.append({
+            "question": "Can I ship gifts directly to the recipient?",
+            "answer": "Yes! When ordering on Redbubble or TeePublic, you can enter the recipient's address directly as the shipping address. The items will be shipped securely in protective packaging without invoice pricing displayed in the package."
+        })
+        faqs.append({
+            "question": "What makes these gifts unique compared to standard retail items?",
+            "answer": f"All designs in the {title} collection are created by independent artist Pieter. Rather than generic mass-produced items, your gift features distinctive, indie digital artwork that stands out and supports independent art."
+        })
+    else:
+        faqs.append({
+            "question": f"What product types are featured in the {title} range?",
+            "answer": f"The {title} collection spans wearables (graphic t-shirts, hoodies, leggings), home decor (throw pillows, duvet covers, shower curtains, tapestries), and accessories (phone cases, drawstring bags, socks) — all bearing Pieter's original artwork."
+        })
+        faqs.append({
+            "question": "What is the return and exchange policy?",
+            "answer": "Both Redbubble and TeePublic offer easy returns and size exchanges with 100% satisfaction guarantees. If there are any issues with your order, their customer support teams provide swift assistance."
+        })
+    
+    # FAQ 3/4: Worldwide Delivery & Artist Authenticity
+    faqs.append({
+        "question": "Where are orders shipped, and how long does delivery take?",
+        "answer": "Orders are produced and dispatched from regional fulfillment centers across North America, Europe, Australia, and the UK to minimize shipping times. Production typically takes 2–4 business days, followed by standard or expedited tracked shipping."
+    })
+    faqs.append({
+        "question": "Are all designs original works by Pieter?",
+        "answer": "Yes! Every single artwork featured across Pieter's POD Art is an authentic original creation. Purchasing through the official Redbubble and TeePublic links ensures you receive genuine authorized prints while directly supporting the artist."
+    })
+    
+    return faqs
+
+
 # ===========================================================================
 # PAGE COMPONENTS
 # ===========================================================================
@@ -1698,6 +1864,38 @@ def render_product_card(product):
 </article>"""
 
 
+def render_guide_section(page, products):
+    cards = get_guide_content(page, products)
+    cards_html = ""
+    for c in cards:
+        cards_html += f"""<div class="guide-card">
+  <h3 class="guide-card-title">{escape_html(c['title'])}</h3>
+  <p class="guide-card-text">{escape_html(c['text'])}</p>
+</div>\n"""
+    return f"""<section class="pseo-guide">
+  <h2 class="section-heading">Collector &amp; Styling Insights</h2>
+  <div class="guide-grid">
+    {cards_html}
+  </div>
+</section>"""
+
+
+def render_faq_section(page, products):
+    faqs = get_page_faqs(page, products)
+    faq_items = ""
+    for f in faqs:
+        faq_items += f"""<div class="faq-item">
+  <h3 class="faq-question">{escape_html(f['question'])}</h3>
+  <div class="faq-answer"><p>{escape_html(f['answer'])}</p></div>
+</div>\n"""
+    return f"""<section class="pseo-faq">
+  <h2 class="section-heading">Frequently Asked Questions</h2>
+  <div class="faq-list">
+    {faq_items}
+  </div>
+</section>"""
+
+
 def render_related(page, all_pages_map):
     links = []
     for rel_slug in page.get("related", []):
@@ -1708,7 +1906,7 @@ def render_related(page, all_pages_map):
     if not links:
         return ""
     return f"""<section class="related-section">
-  <h2 class="related-title">Related Searches</h2>
+  <h2 class="related-title">Related Searches &amp; Collections</h2>
   <div class="related-links">
     {''.join(links)}
   </div>
@@ -1723,17 +1921,20 @@ def render_footer():
       <p class="footer-tagline">{escape_html(SITE_TAGLINE)}</p>
     </div>
     <div class="footer-stores">
+      <h4>Our Stores</h4>
       <a href="{STORE_RB1}" target="_blank" rel="nofollow noopener noreferrer" class="footer-store-link">Redbubble Store 1</a>
       <a href="{STORE_RB2}" target="_blank" rel="nofollow noopener noreferrer" class="footer-store-link">Redbubble Store 2</a>
       <a href="{STORE_TP}" target="_blank" rel="nofollow noopener noreferrer" class="footer-store-link">TeePublic Store</a>
     </div>
     <div class="footer-nav">
+      <h4>Browse Categories</h4>
       <a href="/designs/">Designs</a>
       <a href="/products/">Products</a>
       <a href="/gifts/">Gifts</a>
       <a href="/themes/">Themes</a>
       <a href="/collections/">Collections</a>
       <a href="/rooms/">Rooms</a>
+      <a href="/sitemap/" class="footer-sitemap-link">HTML Site Map</a>
     </div>
     <p class="footer-copy">&copy; {datetime.now().year} {SITE_NAME}. All original designs by Pieter.</p>
   </div>
@@ -1752,6 +1953,19 @@ def render_jsonld(page, canonical_url, products):
             "url": p["url"],
             "image": f"{SITE_URL}{p['img']}",
         })
+        
+    faqs = get_page_faqs(page, products)
+    faq_entities = []
+    for f in faqs:
+        faq_entities.append({
+            "@type": "Question",
+            "name": f["question"],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f["answer"]
+            }
+        })
+
     structured = {
         "@context": "https://schema.org",
         "@graph": [
@@ -1816,6 +2030,11 @@ def render_jsonld(page, canonical_url, products):
                 "url": canonical_url,
                 "numberOfItems": len(items),
                 "itemListElement": items
+            },
+            {
+                "@type": "FAQPage",
+                "@id": f"{canonical_url}#faq",
+                "mainEntity": faq_entities
             }
         ]
     }
@@ -1830,16 +2049,29 @@ def render_section_index(section, section_pages, output_dir):
     section_label = section.replace("-", " ").title()
     canonical_url = f"{SITE_URL}/{section}/"
     page_title = f"{section_label} Collection {SITE_TITLE_SUFFIX}"
-    meta_desc = f"Browse all {section_label.lower()} in Pieter's POD Art collection — original print-on-demand designs available on Redbubble and TeePublic."
+    meta_desc = f"Browse all {len(section_pages)} {section_label.lower()} in Pieter's POD Art collection — original print-on-demand designs available on Redbubble and TeePublic."
     og_img = DEFAULT_OG_IMAGE
+
+    prod_map = {p["id"]: p for p in PRODUCTS}
 
     cards = ""
     for p in section_pages:
         url = f"/{p['section']}/{p['slug']}/"
-        cards += f"""<a href="{url}" class="index-card">
-  <span class="index-card-title">{escape_html(p['breadcrumb_label'])}</span>
-  <span class="index-card-meta">{escape_html(p['meta'][:90])}…</span>
-</a>\n"""
+        prod_id = p["products"][0] if p.get("products") else None
+        prod = prod_map.get(prod_id)
+        card_img = prod["img"] if prod else DEFAULT_OG_IMAGE
+        card_title = escape_html(p['breadcrumb_label'])
+        card_meta = escape_html(p['meta'])
+        cards += f"""<article class="index-card-rich">
+  <a href="{url}" class="index-card-img-link">
+    <img src="{card_img}" alt="{card_title}" width="300" height="300" loading="lazy">
+  </a>
+  <div class="index-card-content">
+    <h2 class="index-card-title"><a href="{url}">{card_title}</a></h2>
+    <p class="index-card-meta">{card_meta}</p>
+    <a href="{url}" class="index-card-cta">Explore Collection &rarr;</a>
+  </div>
+</article>\n"""
 
     nav_items = ""
     for s in ["designs","products","gifts","themes","collections","rooms"]:
@@ -1960,9 +2192,9 @@ def render_section_index(section, section_pages, output_dir):
       </ol>
     </nav>
     <h1 class="section-index-h1">Browse {section_label}</h1>
-    <p class="section-index-sub">Explore {len(section_pages)} curated {section_label.lower()} from Pieter's original print-on-demand art collection.</p>
+    <p class="section-index-sub">Explore {len(section_pages)} curated {section_label.lower()} from Pieter's original print-on-demand art collection. Each design is custom printed and fulfilled worldwide by Redbubble and TeePublic.</p>
   </div>
-  <div class="index-grid">
+  <div class="index-grid-rich">
     {cards}
   </div>
 </main>
@@ -1974,6 +2206,158 @@ def render_section_index(section, section_pages, output_dir):
     with open(idx_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"  [INDEX] /{section}/")
+
+
+# ===========================================================================
+# HTML SITEMAP GENERATOR
+# ===========================================================================
+
+def render_html_sitemap(all_pages, sections, base_output_dir):
+    canonical_url = f"{SITE_URL}/sitemap/"
+    page_title = f"Art Directory & HTML Sitemap {SITE_TITLE_SUFFIX}"
+    meta_desc = f"Explore the complete art directory and HTML sitemap for Pieter's POD Art — browse all 54+ landing pages across Western art, graphic tees, and home decor."
+    
+    sections_order = ["designs", "products", "gifts", "themes", "collections", "rooms"]
+    section_labels = {
+        "designs": "🎨 Design Themes",
+        "products": "🛍️ Product Types",
+        "gifts": "🎁 Gift Guides",
+        "themes": "🌵 Lifestyle Themes",
+        "collections": "📚 Curated Collections",
+        "rooms": "🛋️ Room Decor Ideas",
+    }
+    
+    groups_html = ""
+    for sec_key in sections_order:
+        sec_label = section_labels.get(sec_key, sec_key.title())
+        sec_pages = sections.get(sec_key, [])
+        links_html = ""
+        for p in sec_pages:
+            url = f"/{p['section']}/{p['slug']}/"
+            links_html += f'<li><a href="{url}">{escape_html(p["breadcrumb_label"])}</a> — <span class="sitemap-link-meta">{escape_html(p["title"])}</span></li>\n'
+        
+        groups_html += f"""<div class="sitemap-group">
+  <div class="sitemap-group-header">
+    <h2 class="sitemap-group-title"><a href="/{sec_key}/">{sec_label}</a></h2>
+    <span class="sitemap-group-count">{len(sec_pages)} pages</span>
+  </div>
+  <ul class="sitemap-links">
+    {links_html}
+  </ul>
+</div>\n"""
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {GA_SNIPPET}
+  <title>{page_title}</title>
+  <meta name="description" content="{meta_desc}">
+  <link rel="canonical" href="{canonical_url}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="{page_title}">
+  <meta property="og:description" content="{meta_desc}">
+  <meta property="og:url" content="{canonical_url}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{DEFAULT_OG_IMAGE}">
+  <meta property="og:site_name" content="{SITE_NAME}">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{page_title}">
+  <meta name="twitter:description" content="{meta_desc}">
+  <meta name="twitter:image" content="{DEFAULT_OG_IMAGE}">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/pseo.css">
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@graph": [
+      {{
+        "@type": "WebSite",
+        "@id": "{SITE_URL}/#website",
+        "url": "{SITE_URL}/",
+        "name": "{SITE_NAME}",
+        "description": "{DEFAULT_DESCRIPTION}",
+        "publisher": {{"@id": "{SITE_URL}/#organization"}}
+      }},
+      {{
+        "@type": "BreadcrumbList",
+        "@id": "{canonical_url}#breadcrumb",
+        "itemListElement": [
+          {{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{SITE_URL}/"
+          }},
+          {{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Site Map",
+            "item": "{canonical_url}"
+          }}
+        ]
+      }}
+    ]
+  }}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="top-nav">
+    <a href="/" class="site-logo">
+      <span class="logo-text">Pieter's</span><span class="logo-accent"> POD Art</span>
+    </a>
+    <div class="nav-links">
+      <a href="/designs/" class="nav-link">Designs</a>
+      <a href="/products/" class="nav-link">Products</a>
+      <a href="/gifts/" class="nav-link">Gifts</a>
+      <a href="/themes/" class="nav-link">Themes</a>
+      <a href="/collections/" class="nav-link">Collections</a>
+      <a href="/rooms/" class="nav-link">Rooms</a>
+    </div>
+    <a href="/" class="nav-store-btn">← Back to Main Site</a>
+  </nav>
+</header>
+<main class="sitemap-main">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li class="breadcrumb-sep" aria-hidden="true">›</li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Site Map</span>
+        <link itemprop="item" href="{canonical_url}">
+        <meta itemprop="position" content="2">
+      </li>
+    </ol>
+  </nav>
+  <div class="sitemap-hero">
+    <h1 class="sitemap-h1">Art Directory &amp; HTML Site Map</h1>
+    <p class="sitemap-sub">Explore all 54+ curated landing pages across Pieter's Print-On-Demand collections, designs, gifts, and room themes.</p>
+  </div>
+  <div class="sitemap-grid">
+    {groups_html}
+  </div>
+</main>
+{render_footer()}
+</body>
+</html>"""
+    out_dir = os.path.join(base_output_dir, "sitemap")
+    os.makedirs(out_dir, exist_ok=True)
+    out_file = os.path.join(out_dir, "index.html")
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"  [SITEMAP] /sitemap/")
 
 
 # ===========================================================================
@@ -2007,16 +2391,23 @@ def render_page(page, all_pages_map, base_output_dir):
     <div class="pseo-intro">
       <p>{page['intro'].strip().replace(chr(10), '</p><p>')}</p>
     </div>
+    
     <section class="products-section">
       <h2 class="products-title">Shop These Designs</h2>
       <div class="products-grid">
         {product_cards}
       </div>
     </section>
+
+    {render_guide_section(page, products)}
+
     <div class="pseo-closing">
       <p>{page['closing'].strip().replace(chr(10), '</p><p>')}</p>
     </div>
+
+    {render_faq_section(page, products)}
   </article>
+  
   <aside class="pseo-sidebar">
     <div class="sidebar-stores">
       <h3>Shop the Stores</h3>
@@ -2032,6 +2423,7 @@ def render_page(page, all_pages_map, base_output_dir):
       <a href="/themes/">Themes</a>
       <a href="/collections/">Collections</a>
       <a href="/rooms/">Rooms</a>
+      <a href="/sitemap/">Site Map</a>
     </div>
   </aside>
 </div>
@@ -2055,27 +2447,67 @@ def render_page(page, all_pages_map, base_output_dir):
 # SITEMAP GENERATOR
 # ===========================================================================
 
-def generate_sitemap(urls, output_dir):
+def generate_sitemap(urls, all_pages, output_dir):
+    prod_map = {p["id"]: p for p in PRODUCTS}
+    page_map = {f"{SITE_URL}/{p['section']}/{p['slug']}/": p for p in all_pages}
+    
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'
     ]
-    # Add homepage
-    lines.append(f"  <url>\n    <loc>{SITE_URL}/</loc>\n    <lastmod>{CURRENT_DATE}</lastmod>\n  </url>")
-    
-    # Add section index URLs
+    # Homepage
+    lines.append(f"""  <url>
+    <loc>{SITE_URL}/</loc>
+    <lastmod>{CURRENT_DATE}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>""")
+
+    # HTML Sitemap
+    lines.append(f"""  <url>
+    <loc>{SITE_URL}/sitemap/</loc>
+    <lastmod>{CURRENT_DATE}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>""")
+
+    # Section index URLs
     for section in ["designs","products","gifts","themes","collections","rooms"]:
-        lines.append(f"  <url>\n    <loc>{SITE_URL}/{section}/</loc>\n    <lastmod>{CURRENT_DATE}</lastmod>\n  </url>")
-        
-    # Add all landing page URLs
+        lines.append(f"""  <url>
+    <loc>{SITE_URL}/{section}/</loc>
+    <lastmod>{CURRENT_DATE}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>""")
+
+    # Landing page URLs with images
     for url in sorted(urls):
-        lines.append(f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{CURRENT_DATE}</lastmod>\n  </url>")
-        
+        p_obj = page_map.get(url)
+        img_xml = ""
+        if p_obj and "products" in p_obj:
+            for pid in p_obj["products"][:4]:
+                if pid in prod_map:
+                    p = prod_map[pid]
+                    img_loc = f"{SITE_URL}{p['img']}"
+                    img_title = escape_html(p['title'])
+                    img_xml += f"""
+    <image:image>
+      <image:loc>{img_loc}</image:loc>
+      <image:title>{img_title}</image:title>
+    </image:image>"""
+        lines.append(f"""  <url>
+    <loc>{url}</loc>
+    <lastmod>{CURRENT_DATE}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>{img_xml}
+  </url>""")
+
     lines.append("</urlset>\n")
     sitemap_path = os.path.join(output_dir, "sitemap.xml")
     with open(sitemap_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
-    print(f"\nSitemap written -> {sitemap_path} ({len(urls) + 7} total URLs)")
+    print(f"\nSitemap written -> {sitemap_path} ({len(urls) + 8} total URLs)")
 
 
 def generate_robots(output_dir):
@@ -2124,16 +2556,21 @@ def main():
                 page_count += 1
                 print(f"  [OK] /{page['section']}/{page['slug']}/")
 
+    # HTML Sitemap
+    render_html_sitemap(PAGES, sections, base_output_dir)
+
     # Sitemap & robots
-    generate_sitemap(generated_urls, base_output_dir)
+    generate_sitemap(generated_urls, PAGES, base_output_dir)
     generate_robots(base_output_dir)
 
     print(f"\n{'='*60}")
     print(f"[OK] {page_count} landing pages generated")
     print(f"[OK] {len(sections)} section index pages generated")
+    print(f"[OK] HTML sitemap -> /sitemap/")
     print(f"[OK] sitemap.xml -> {SITE_URL}/sitemap.xml")
     print(f"[OK] robots.txt updated")
 
 
 if __name__ == "__main__":
     main()
+

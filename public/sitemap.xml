@@ -1,247 +1,1240 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://pod.softcoverbooks.co.za/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pod.softcoverbooks.co.za/sitemap/</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/rooms/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/abstract-digital-collection/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_055.png</image:loc>
+      <image:title>Colorful Fractal Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_061.png</image:loc>
+      <image:title>Digital Wave Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_037.png</image:loc>
+      <image:title>Abstract Digital Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_036.png</image:loc>
+      <image:title>Neon Pop Art T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/best-western-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_060.png</image:loc>
+      <image:title>Wild West Stampede Duvet</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_022.png</image:loc>
+      <image:title>Cowboy &amp; Indian Teepee Art</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/cowboy-prints/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Rodeo Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_027.png</image:loc>
+      <image:title>Sheriff Badge Wall Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Legend Wall Hanging</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/gift-guide-western-lover/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Western Ranch Throw Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_065.png</image:loc>
+      <image:title>Western Era Shower Curtain</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/home-office-wall-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_027.png</image:loc>
+      <image:title>Sheriff Badge Wall Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_050.png</image:loc>
+      <image:title>Abstract Art Canvas Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_050.png</image:loc>
+      <image:title>Geometric Wall Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Vintage Western Poster</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/sci-fi-collection/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_011.png</image:loc>
+      <image:title>Space Planet Galaxy T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_021.png</image:loc>
+      <image:title>Alien Newbies T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_072.png</image:loc>
+      <image:title>Cyber Punk Robot T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/spiritual-collection/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_007.png</image:loc>
+      <image:title>Yin Yang Red Circle T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_020.png</image:loc>
+      <image:title>Yin Yang Yellow Ball Pattern</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_030.png</image:loc>
+      <image:title>Yin Yang Triple Ball T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/collections/top-graphic-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_055.png</image:loc>
+      <image:title>Colorful Fractal Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_058.png</image:loc>
+      <image:title>Artistic Dragon T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/abstract-art-prints/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Colorful Spiral Wall Art</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_078.png</image:loc>
+      <image:title>Psychedelic Home Decor Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_050.png</image:loc>
+      <image:title>Abstract Art Canvas Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_079.png</image:loc>
+      <image:title>Abstract Digital Canvas</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/alien-sci-fi-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_021.png</image:loc>
+      <image:title>Alien Newbies T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_011.png</image:loc>
+      <image:title>Space Planet Galaxy T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_072.png</image:loc>
+      <image:title>Cyber Punk Robot T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/chess-art-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_003.png</image:loc>
+      <image:title>Chess Dragon Crest T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_076.png</image:loc>
+      <image:title>Chess Piece Art Poster</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_058.png</image:loc>
+      <image:title>Artistic Dragon T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_019.png</image:loc>
+      <image:title>Gothic Alphabet T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/colorful-graphic-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_013.png</image:loc>
+      <image:title>Colorful Swirl Vortex T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_036.png</image:loc>
+      <image:title>Neon Pop Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_055.png</image:loc>
+      <image:title>Colorful Fractal Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_061.png</image:loc>
+      <image:title>Digital Wave Art T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/cowboy-art-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Rodeo Art Print</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/cyberpunk-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_072.png</image:loc>
+      <image:title>Cyber Punk Robot T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_036.png</image:loc>
+      <image:title>Neon Pop Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_037.png</image:loc>
+      <image:title>Abstract Digital Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_045.png</image:loc>
+      <image:title>Blue Star Network T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/dragon-fantasy-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_003.png</image:loc>
+      <image:title>Chess Dragon Crest T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_058.png</image:loc>
+      <image:title>Artistic Dragon T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_019.png</image:loc>
+      <image:title>Gothic Alphabet T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_045.png</image:loc>
+      <image:title>Blue Star Network T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/native-american-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_053.png</image:loc>
+      <image:title>Native American Eagle Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_031.png</image:loc>
+      <image:title>Native American Dreamcatcher</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/psychedelic-art-shirts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_013.png</image:loc>
+      <image:title>Colorful Swirl Vortex T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_039.jpg</image:loc>
+      <image:title>Psychedelic Circle T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_055.png</image:loc>
+      <image:title>Colorful Fractal Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_037.png</image:loc>
+      <image:title>Abstract Digital Art T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/retro-vintage-art-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_009.png</image:loc>
+      <image:title>Captain Scarlet &amp; Blue T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_074.png</image:loc>
+      <image:title>Class of 2020 Vintage T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_077.png</image:loc>
+      <image:title>Retro Space Shuttle T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_025.png</image:loc>
+      <image:title>Birthday Vintage Year T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/sheriff-badge-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_027.png</image:loc>
+      <image:title>Sheriff Badge Wall Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Rodeo Art Print</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/spiritual-art-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_007.png</image:loc>
+      <image:title>Yin Yang Red Circle T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_020.png</image:loc>
+      <image:title>Yin Yang Yellow Ball Pattern</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_015.jpg</image:loc>
+      <image:title>Triquetra Spiral Art T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/sports-hobby-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_063.png</image:loc>
+      <image:title>I Love Tennis T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_003.png</image:loc>
+      <image:title>Chess Dragon Crest T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_076.png</image:loc>
+      <image:title>Chess Piece Art Poster</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_074.png</image:loc>
+      <image:title>Class of 2020 Vintage T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/tribal-art-designs/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_059.png</image:loc>
+      <image:title>Tribal Pattern T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_015.jpg</image:loc>
+      <image:title>Triquetra Spiral Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_066.png</image:loc>
+      <image:title>Geometric Art T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/designs/yin-yang-art-shirts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_007.png</image:loc>
+      <image:title>Yin Yang Red Circle T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_020.png</image:loc>
+      <image:title>Yin Yang Yellow Ball Pattern</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_030.png</image:loc>
+      <image:title>Yin Yang Triple Ball T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/birthday-gift-tees/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_025.png</image:loc>
+      <image:title>Birthday Vintage Year T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_074.png</image:loc>
+      <image:title>Class of 2020 Vintage T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_063.png</image:loc>
+      <image:title>I Love Tennis T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_070.png</image:loc>
+      <image:title>Sexy Light Blue T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/cowboy-gifts-for-him/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_043.png</image:loc>
+      <image:title>Western Horse Rider Phone Case</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_046.png</image:loc>
+      <image:title>Steam Train Drawstring Bag</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/home-decor-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_050.png</image:loc>
+      <image:title>Abstract Art Canvas Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Western Ranch Throw Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Fantasy Duvet Cover</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/sci-fi-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_021.png</image:loc>
+      <image:title>Alien Newbies T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_072.png</image:loc>
+      <image:title>Cyber Punk Robot T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_011.png</image:loc>
+      <image:title>Space Planet Galaxy T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/unique-birthday-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_025.png</image:loc>
+      <image:title>Birthday Vintage Year T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_074.png</image:loc>
+      <image:title>Class of 2020 Vintage T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_063.png</image:loc>
+      <image:title>I Love Tennis T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_003.png</image:loc>
+      <image:title>Chess Dragon Crest T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/unique-gifts/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Vintage Western Poster</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/western-gifts-for-her/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_035.png</image:loc>
+      <image:title>Wild West Boot Leggings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_016.png</image:loc>
+      <image:title>Wild West Cowboy Boot Dress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_032.png</image:loc>
+      <image:title>Western Bandana Scarf</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/gifts/western-gifts-for-him/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_043.png</image:loc>
+      <image:title>Western Horse Rider Phone Case</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Rodeo Art Print</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/drawstring-bags/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_046.png</image:loc>
+      <image:title>Steam Train Drawstring Bag</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_032.png</image:loc>
+      <image:title>Western Bandana Scarf</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_043.png</image:loc>
+      <image:title>Western Horse Rider Phone Case</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/duvet-covers/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_060.png</image:loc>
+      <image:title>Wild West Stampede Duvet</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Fantasy Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_060.png</image:loc>
+      <image:title>Rodeo Art Duvet Cover</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/graphic-tees-for-men/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_072.png</image:loc>
+      <image:title>Cyber Punk Robot T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_019.png</image:loc>
+      <image:title>Gothic Alphabet T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/graphic-tees-for-women/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_067.png</image:loc>
+      <image:title>Bright Bloom T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_008.jpg</image:loc>
+      <image:title>Love Heart Rings T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_012.jpg</image:loc>
+      <image:title>Love Rainbow Heart T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/mandala-art-prints/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_002.png</image:loc>
+      <image:title>Yin Yang Pink Mandala T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_020.png</image:loc>
+      <image:title>Yin Yang Yellow Ball Pattern</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_030.png</image:loc>
+      <image:title>Yin Yang Triple Ball T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_039.jpg</image:loc>
+      <image:title>Psychedelic Circle T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/phone-cases-western/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_043.png</image:loc>
+      <image:title>Western Horse Rider Phone Case</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_042.png</image:loc>
+      <image:title>Wild West Sheriff Badge T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_032.png</image:loc>
+      <image:title>Western Bandana Scarf</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/shower-curtains/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_065.png</image:loc>
+      <image:title>Western Era Whiskey Shower Curtain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_065.png</image:loc>
+      <image:title>Western Era Shower Curtain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Vintage Western Poster</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_078.png</image:loc>
+      <image:title>Psychedelic Home Decor Print</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/wall-art-prints/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Rodeo Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_027.png</image:loc>
+      <image:title>Sheriff Badge Wall Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_050.png</image:loc>
+      <image:title>Abstract Art Canvas Print</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/wall-tapestries/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Western Country Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_022.png</image:loc>
+      <image:title>Wild West Buffalo Tapestry</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/western-leggings/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_035.png</image:loc>
+      <image:title>Wild West Boot Leggings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_016.png</image:loc>
+      <image:title>Wild West Cowboy Boot Dress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_032.png</image:loc>
+      <image:title>Western Bandana Scarf</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_070.png</image:loc>
+      <image:title>Sexy Light Blue T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/products/western-throw-pillows/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Covered Wagon Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Western Ranch Throw Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Cowboy Rodeo Floor Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Wagon Floor Pillow</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/rooms/dorm-room-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Western Country Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_013.png</image:loc>
+      <image:title>Colorful Swirl Vortex T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_055.png</image:loc>
+      <image:title>Colorful Fractal Art T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/rooms/game-room-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_072.png</image:loc>
+      <image:title>Cyber Punk Robot T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_003.png</image:loc>
+      <image:title>Chess Dragon Crest T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_076.png</image:loc>
+      <image:title>Chess Piece Art Poster</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/rooms/kids-western-decor/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_031.png</image:loc>
+      <image:title>Native American Dreamcatcher</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Covered Wagon Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_031.png</image:loc>
+      <image:title>Dreamcatcher Wall Hanging</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/rooms/western-bedroom-room/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_060.png</image:loc>
+      <image:title>Wild West Stampede Duvet</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Fantasy Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Covered Wagon Pillow</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/rooms/western-living-room/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Covered Wagon Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Western Ranch Throw Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Colorful Spiral Wall Art</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/space-galaxy-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_011.png</image:loc>
+      <image:title>Space Planet Galaxy T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_077.png</image:loc>
+      <image:title>Retro Space Shuttle T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_045.png</image:loc>
+      <image:title>Blue Star Network T-Shirt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_010.png</image:loc>
+      <image:title>Red Alien T-Shirt</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/western-accessories/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_043.png</image:loc>
+      <image:title>Western Horse Rider Phone Case</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_046.png</image:loc>
+      <image:title>Steam Train Drawstring Bag</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_032.png</image:loc>
+      <image:title>Western Bandana Scarf</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/western-bathroom-decor/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_065.png</image:loc>
+      <image:title>Western Era Whiskey Shower Curtain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_065.png</image:loc>
+      <image:title>Western Era Shower Curtain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Vintage Western Poster</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_051.png</image:loc>
+      <image:title>Classic Western Art Poster</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/western-bedroom-decor/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_060.png</image:loc>
+      <image:title>Wild West Stampede Duvet</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_004.png</image:loc>
+      <image:title>Western Lady Fantasy Duvet Cover</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_060.png</image:loc>
+      <image:title>Rodeo Art Duvet Cover</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/western-fashion/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_016.png</image:loc>
+      <image:title>Wild West Cowboy Boot Dress</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_035.png</image:loc>
+      <image:title>Wild West Boot Leggings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_032.png</image:loc>
+      <image:title>Western Bandana Scarf</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_001.png</image:loc>
+      <image:title>Sheriff Badge Socks</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/western-home-decor/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Covered Wagon Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_041.png</image:loc>
+      <image:title>Western Ranch Throw Pillow</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_018.png</image:loc>
+      <image:title>Indian Tomahawk Wall Tapestry</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_005.png</image:loc>
+      <image:title>Wild West Wagon Floor Pillow</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://pod.softcoverbooks.co.za/themes/western-wall-art/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_068.png</image:loc>
+      <image:title>Cowboy Hat Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_026.png</image:loc>
+      <image:title>Cowboy Rodeo Art Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_027.png</image:loc>
+      <image:title>Sheriff Badge Wall Print</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pod.softcoverbooks.co.za/images/scraped_image_053.png</image:loc>
+      <image:title>Native American Eagle Print</image:title>
+    </image:image>
   </url>
 </urlset>
