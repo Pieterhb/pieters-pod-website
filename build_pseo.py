@@ -1987,7 +1987,8 @@ def render_jsonld(page, canonical_url, products):
                 "logo": {
                     "@type": "ImageObject",
                     "url": PUBLISHER_LOGO
-                }
+                },
+                "sameAs": [STORE_RB1, STORE_RB2, STORE_TP]
             },
             {
                 "@type": "BreadcrumbList",
@@ -2048,8 +2049,26 @@ def render_jsonld(page, canonical_url, products):
 def render_section_index(section, section_pages, output_dir):
     section_label = section.replace("-", " ").title()
     canonical_url = f"{SITE_URL}/{section}/"
-    page_title = f"{section_label} Collection {SITE_TITLE_SUFFIX}"
-    meta_desc = f"Browse all {len(section_pages)} {section_label.lower()} in Pieter's POD Art collection — original print-on-demand designs available on Redbubble and TeePublic."
+
+    # Rich, keyword-dense titles & descriptions per section
+    _section_titles = {
+        "designs":     f"Art Designs & Graphic Themes {SITE_TITLE_SUFFIX}",
+        "products":    f"Print-on-Demand Product Types {SITE_TITLE_SUFFIX}",
+        "gifts":       f"Unique Art Gift Ideas {SITE_TITLE_SUFFIX}",
+        "themes":      f"Lifestyle & Decorating Themes {SITE_TITLE_SUFFIX}",
+        "collections": f"Curated Art Collections {SITE_TITLE_SUFFIX}",
+        "rooms":       f"Room Decor Art Ideas {SITE_TITLE_SUFFIX}",
+    }
+    _section_metas = {
+        "designs":     f"Browse {len(section_pages)} original art design themes — from Western cowboy prints and alien sci-fi tees to psychedelic abstract art. Shop on Redbubble and TeePublic.",
+        "products":    f"Shop {len(section_pages)} print-on-demand product types including graphic tees, duvet covers, throw pillows, tapestries, phone cases and more — all featuring Pieter's original artwork.",
+        "gifts":       f"Find the perfect art gift in {len(section_pages)} curated gift guides — western gifts for him & her, sci-fi gifts, birthday tees, and unique home decor presents.",
+        "themes":      f"Explore {len(section_pages)} lifestyle decorating themes featuring western country art, spiritual designs, abstract prints and more by independent artist Pieter.",
+        "collections": f"Discover {len(section_pages)} curated art collections spanning western art, sci-fi, abstract digital, spiritual, and graphic tee themes — unique print-on-demand art.",
+        "rooms":       f"Decorate any room with {len(section_pages)} curated room art ideas — living room, bedroom, dorm, office and more — featuring original western and abstract prints.",
+    }
+    page_title = _section_titles.get(section, f"{section_label} Collection {SITE_TITLE_SUFFIX}")
+    meta_desc   = _section_metas.get(section, f"Browse all {len(section_pages)} {section_label.lower()} in Pieter's POD Art collection — original print-on-demand designs available on Redbubble and TeePublic.")
     og_img = DEFAULT_OG_IMAGE
 
     prod_map = {p["id"]: p for p in PRODUCTS}
@@ -2094,7 +2113,8 @@ def render_section_index(section, section_pages, output_dir):
                 "@id": f"{SITE_URL}/#organization",
                 "name": PUBLISHER_NAME,
                 "url": f"{SITE_URL}/",
-                "logo": {"@type": "ImageObject", "url": PUBLISHER_LOGO}
+                "logo": {"@type": "ImageObject", "url": PUBLISHER_LOGO},
+                "sameAs": [STORE_RB1, STORE_RB2, STORE_TP]
             },
             {
                 "@type": "BreadcrumbList",
@@ -2123,6 +2143,22 @@ def render_section_index(section, section_pages, output_dir):
                 "breadcrumb": {"@id": f"{canonical_url}#breadcrumb"},
                 "isPartOf": {"@id": f"{SITE_URL}/#website"},
                 "publisher": {"@id": f"{SITE_URL}/#organization"}
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{canonical_url}#itemlist",
+                "name": f"{section_label} — Pieter's POD Art",
+                "url": canonical_url,
+                "numberOfItems": len(section_pages),
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": idx + 1,
+                        "name": p["breadcrumb_label"],
+                        "url": f"{SITE_URL}/{p['section']}/{p['slug']}/"
+                    }
+                    for idx, p in enumerate(section_pages)
+                ]
             }
         ]
     }
