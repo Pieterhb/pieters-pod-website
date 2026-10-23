@@ -8,10 +8,6 @@
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=3600
 
-/sitemap_*.xml
-  Content-Type: application/xml; charset=utf-8
-
-
 /google528afe2f0ae2ed34.html
   X-Robots-Tag: noindex
 
