@@ -4,6 +4,7 @@ Site configuration constants for Pieter's POD Art pSEO generator.
 
 SITE_URL = "https://pod.softcoverbooks.co.za"
 SITE_NAME = "Pieter's POD Art"
+SCHEMA_STORE_NAME = "Softcover Books Print On Demand Store"
 SITE_TITLE_SUFFIX = "| Pieter's POD Art"
 SITE_TAGLINE = "Unique Print-on-Demand Art & Design — Western, Apparel & Home Decor"
 DEFAULT_DESCRIPTION = (

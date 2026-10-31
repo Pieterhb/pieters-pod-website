@@ -16,7 +16,7 @@ from datetime import datetime
 from math import ceil
 
 from site_config import (
-    SITE_URL, SITE_NAME, SITE_TITLE_SUFFIX, SITE_TAGLINE,
+    SITE_URL, SITE_NAME, SCHEMA_STORE_NAME, SITE_TITLE_SUFFIX, SITE_TAGLINE,
     DEFAULT_DESCRIPTION, GA_ID, PUBLISHER_NAME, PUBLISHER_LOGO,
     DEFAULT_OG_IMAGE, STORE_RB1, STORE_RB2, STORE_TP
 )
@@ -1749,7 +1749,7 @@ GA_SNIPPET = f"""<!-- Google tag (gtag.js) -->
 </script>"""
 
 
-def render_head(page, canonical_url, og_image=None):
+def render_head(page, canonical_url, jsonld_script="", og_image=None):
     og_img = og_image or DEFAULT_OG_IMAGE
     page_title = f"{escape_html(page['title'])} {SITE_TITLE_SUFFIX}"
     meta_desc = escape_html(page['meta'])
@@ -1759,10 +1759,11 @@ def render_head(page, canonical_url, og_image=None):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   {GA_SNIPPET}
   <title>{page_title}</title>
   <meta name="description" content="{meta_desc}">
-  <link rel="canonical" href="{canonical_url}">
+  <link rel="canonical" href="{canonical_url}" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="{page_title}">
@@ -1787,6 +1788,7 @@ def render_head(page, canonical_url, og_image=None):
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/pseo.css">
+  {jsonld_script}
 </head>
 <body>"""
 
@@ -1973,7 +1975,7 @@ def render_jsonld(page, canonical_url, products):
                 "@type": "WebSite",
                 "@id": f"{SITE_URL}/#website",
                 "url": f"{SITE_URL}/",
-                "name": SITE_NAME,
+                "name": SCHEMA_STORE_NAME,
                 "description": DEFAULT_DESCRIPTION,
                 "publisher": {
                     "@id": f"{SITE_URL}/#organization"
@@ -1982,7 +1984,7 @@ def render_jsonld(page, canonical_url, products):
             {
                 "@type": "Organization",
                 "@id": f"{SITE_URL}/#organization",
-                "name": PUBLISHER_NAME,
+                "name": SCHEMA_STORE_NAME,
                 "url": f"{SITE_URL}/",
                 "logo": {
                     "@type": "ImageObject",
@@ -2104,14 +2106,14 @@ def render_section_index(section, section_pages, output_dir):
                 "@type": "WebSite",
                 "@id": f"{SITE_URL}/#website",
                 "url": f"{SITE_URL}/",
-                "name": SITE_NAME,
+                "name": SCHEMA_STORE_NAME,
                 "description": DEFAULT_DESCRIPTION,
                 "publisher": {"@id": f"{SITE_URL}/#organization"}
             },
             {
                 "@type": "Organization",
                 "@id": f"{SITE_URL}/#organization",
-                "name": PUBLISHER_NAME,
+                "name": SCHEMA_STORE_NAME,
                 "url": f"{SITE_URL}/",
                 "logo": {"@type": "ImageObject", "url": PUBLISHER_LOGO},
                 "sameAs": [STORE_RB1, STORE_RB2, STORE_TP]
@@ -2169,10 +2171,11 @@ def render_section_index(section, section_pages, output_dir):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   {GA_SNIPPET}
   <title>{page_title}</title>
   <meta name="description" content="{meta_desc}">
-  <link rel="canonical" href="{canonical_url}">
+  <link rel="canonical" href="{canonical_url}" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="{page_title}">
@@ -2282,15 +2285,84 @@ def render_html_sitemap(all_pages, sections, base_output_dir):
   </ul>
 </div>\n"""
 
+    section_items = [
+        {"@type": "ListItem", "position": 1, "name": "Art Designs & Graphic Themes", "url": f"{SITE_URL}/designs/"},
+        {"@type": "ListItem", "position": 2, "name": "Print-on-Demand Product Types", "url": f"{SITE_URL}/products/"},
+        {"@type": "ListItem", "position": 3, "name": "Unique Art Gift Ideas", "url": f"{SITE_URL}/gifts/"},
+        {"@type": "ListItem", "position": 4, "name": "Lifestyle & Decorating Themes", "url": f"{SITE_URL}/themes/"},
+        {"@type": "ListItem", "position": 5, "name": "Curated Art Collections", "url": f"{SITE_URL}/collections/"},
+        {"@type": "ListItem", "position": 6, "name": "Room Decor Art Ideas", "url": f"{SITE_URL}/rooms/"},
+    ]
+
+    sitemap_jsonld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": f"{SITE_URL}/#website",
+                "url": f"{SITE_URL}/",
+                "name": SCHEMA_STORE_NAME,
+                "description": DEFAULT_DESCRIPTION,
+                "publisher": {"@id": f"{SITE_URL}/#organization"}
+            },
+            {
+                "@type": "Organization",
+                "@id": f"{SITE_URL}/#organization",
+                "name": SCHEMA_STORE_NAME,
+                "url": f"{SITE_URL}/",
+                "logo": {"@type": "ImageObject", "url": PUBLISHER_LOGO},
+                "sameAs": [STORE_RB1, STORE_RB2, STORE_TP]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{canonical_url}#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": f"{SITE_URL}/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Site Map",
+                        "item": canonical_url
+                    }
+                ]
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": f"{canonical_url}#webpage",
+                "url": canonical_url,
+                "name": page_title,
+                "description": meta_desc,
+                "breadcrumb": {"@id": f"{canonical_url}#breadcrumb"},
+                "isPartOf": {"@id": f"{SITE_URL}/#website"},
+                "publisher": {"@id": f"{SITE_URL}/#organization"}
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{canonical_url}#itemlist",
+                "name": "Softcover Books POD Art Directory",
+                "url": canonical_url,
+                "numberOfItems": len(section_items),
+                "itemListElement": section_items
+            }
+        ]
+    }
+    sitemap_jsonld_str = f'<script type="application/ld+json">\n{json.dumps(sitemap_jsonld, indent=2, ensure_ascii=False)}\n  </script>'
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   {GA_SNIPPET}
   <title>{page_title}</title>
   <meta name="description" content="{meta_desc}">
-  <link rel="canonical" href="{canonical_url}">
+  <link rel="canonical" href="{canonical_url}" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="{page_title}">
@@ -2311,39 +2383,7 @@ def render_html_sitemap(all_pages, sections, base_output_dir):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/pseo.css">
-  <script type="application/ld+json">
-  {{
-    "@context": "https://schema.org",
-    "@graph": [
-      {{
-        "@type": "WebSite",
-        "@id": "{SITE_URL}/#website",
-        "url": "{SITE_URL}/",
-        "name": "{SITE_NAME}",
-        "description": "{DEFAULT_DESCRIPTION}",
-        "publisher": {{"@id": "{SITE_URL}/#organization"}}
-      }},
-      {{
-        "@type": "BreadcrumbList",
-        "@id": "{canonical_url}#breadcrumb",
-        "itemListElement": [
-          {{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{SITE_URL}/"
-          }},
-          {{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Site Map",
-            "item": "{canonical_url}"
-          }}
-        ]
-      }}
-    ]
-  }}
-  </script>
+  {sitemap_jsonld_str}
 </head>
 <body>
 <header class="site-header">
@@ -2411,10 +2451,11 @@ def render_page(page, all_pages_map, base_output_dir):
         return None
 
     og_image = f"{SITE_URL}{products[0]['img']}" if products else DEFAULT_OG_IMAGE
+    jsonld_script = render_jsonld(page, canonical_url, products)
 
     product_cards = "\n".join(render_product_card(p) for p in products)
 
-    html = render_head(page, canonical_url, og_image) + "\n"
+    html = render_head(page, canonical_url, jsonld_script, og_image) + "\n"
     html += render_nav(page, section) + "\n"
     html += "<main class=\"pseo-main\">\n"
     html += render_breadcrumbs(page, section, canonical_url) + "\n"
@@ -2465,7 +2506,6 @@ def render_page(page, all_pages_map, base_output_dir):
 </div>
 {render_related(page, all_pages_map)}
 """
-    html += render_jsonld(page, canonical_url, products) + "\n"
     html += "</main>\n"
     html += render_footer() + "\n"
     html += "</body>\n</html>"
