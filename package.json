@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "backup": "git add -A && git commit -m \"Backup latest changes\" && git push"
+    "backup": "git add -A && git commit -m \"Backup latest changes\" && git push",
+    "indexnow": "python indexnow_submit.py",
+    "indexnow:dry": "python indexnow_submit.py --dry-run"
   },
   "devDependencies": {
     "vite": "^8.2.0"
