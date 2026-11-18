@@ -27,8 +27,10 @@ from datetime import datetime
 # Configuration
 # ─────────────────────────────────────────────────────────────────────────────
 INDEXNOW_API     = "https://api.indexnow.org/IndexNow"
-API_KEY          = "213e4add805347a492ede4a5d74ab931"
-KEY_LOCATION     = f"https://pod.softcoverbooks.co.za/{API_KEY}.txt"
+# Master key verified in Bing Webmaster Tools for www.softcoverbooks.co.za.
+# Accepted for all softcoverbooks.co.za subdomains per IndexNow protocol.
+API_KEY          = "e6b44d6766614ba9b455ea2a1eda494d"
+KEY_LOCATION     = "https://pod.softcoverbooks.co.za/e6b44d6766614ba9b455ea2a1eda494d.txt"
 HOST             = "pod.softcoverbooks.co.za"
 SITEMAP_URL      = "https://pod.softcoverbooks.co.za/sitemap.xml"
 LOCAL_SITEMAP    = "public/sitemap.xml"   # used as fallback / offline
@@ -79,48 +81,48 @@ def load_urls_from_remote_sitemap(sitemap_url: str) -> list[str]:
 
 def submit_batch(urls: list[str], dry_run: bool = False) -> bool:
     """Submit a batch of URLs to the IndexNow API via HTTP POST."""
-    payload = {
-        "host":        HOST,
-        "key":         API_KEY,
-        "keyLocation": KEY_LOCATION,
-        "urlList":     urls,
-    }
-    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    key_locations_to_try = [
+        KEY_LOCATION,
+        "https://www.softcoverbooks.co.za/e6b44d6766614ba9b455ea2a1eda494d.txt"
+    ]
 
-    if dry_run:
-        log(f"[DRY-RUN] Would POST {len(urls)} URL(s) to {INDEXNOW_API}")
-        for u in urls:
-            print(f"  -> {u}")
-        return True
+    for curr_key_loc in key_locations_to_try:
+        payload = {
+            "host":        HOST,
+            "key":         API_KEY,
+            "keyLocation": curr_key_loc,
+            "urlList":     urls,
+        }
+        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
 
-    req = urllib.request.Request(
-        INDEXNOW_API,
-        data=body,
-        headers={
-            "Content-Type": "application/json; charset=utf-8",
-            "User-Agent":   "IndexNow-Submit/1.0 (pod.softcoverbooks.co.za)",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            status = resp.status
-    except urllib.error.HTTPError as exc:
-        status = exc.code
-        body_text = exc.read().decode("utf-8", errors="replace")
-        log(f"ERROR: HTTP {status} from IndexNow API — {body_text}")
-        return False
-    except urllib.error.URLError as exc:
-        log(f"ERROR: Network error — {exc.reason}")
-        return False
+        req = urllib.request.Request(
+            INDEXNOW_API,
+            data=body,
+            headers={
+                "Content-Type": "application/json; charset=utf-8",
+                "User-Agent":   "IndexNow-Submit/1.0 (pod.softcoverbooks.co.za)",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                status = resp.status
+                if status in (200, 202):
+                    log(f"OK: Submitted {len(urls)} URL(s) using {curr_key_loc} -- HTTP {status}")
+                    return True
+        except urllib.error.HTTPError as exc:
+            status = exc.code
+            body_text = exc.read().decode("utf-8", errors="replace")
+            if status == 403 and curr_key_loc != key_locations_to_try[-1]:
+                log(f"Notice: Same-host key returned 403, retrying with root master keyLocation...")
+                continue
+            log(f"ERROR: HTTP {status} from IndexNow API — {body_text}")
+            return False
+        except urllib.error.URLError as exc:
+            log(f"ERROR: Network error — {exc.reason}")
+            return False
 
-    # 200 = OK (URL submitted), 202 = Accepted (queued)
-    if status in (200, 202):
-        log(f"OK: Submitted {len(urls)} URL(s) -- HTTP {status}")
-        return True
-    else:
-        log(f"WARNING: Unexpected HTTP {status} from IndexNow API")
-        return False
+    return False
 
 
 def main() -> None:

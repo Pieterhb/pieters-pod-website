@@ -51,7 +51,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Sheriff Badge Socks',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Sheriff%20Badge%20Socks'},
     {   'id': 'w02',
-        'img': '/images/scraped_image_005.png',
+        'img': '/images/scraped_image_005.webp',
         'store': 'Redbubble',
         'tags': ['western', 'cowboy', 'pillow', 'home-decor', 'wild-west', 'gifts'],
         'title': 'Wild West Covered Wagon Pillow',
@@ -69,13 +69,13 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Indian Tomahawk Tapestry',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Indian%20Tomahawk%20Tapestry'},
     {   'id': 'w05',
-        'img': '/images/scraped_image_022.png',
+        'img': '/images/scraped_image_022.webp',
         'store': 'Redbubble',
         'tags': ['western', 'native-american', 'wall-art', 'cowboy', 'gifts'],
         'title': 'Cowboy & Indian Teepee Art',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Cowboy%20Indian%20Teepee%20Art'},
     {   'id': 'w06',
-        'img': '/images/scraped_image_004.png',
+        'img': '/images/scraped_image_004.webp',
         'store': 'Redbubble',
         'tags': ['western', 'duvet', 'home-decor', 'bedroom', 'fantasy', 'women'],
         'title': 'Western Lady Duvet Cover',
@@ -129,7 +129,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Native American Eagle Print',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Native%20American%20Eagle%20Print'},
     {   'id': 'w15',
-        'img': '/images/scraped_image_060.png',
+        'img': '/images/scraped_image_060.webp',
         'store': 'Redbubble',
         'tags': ['western', 'duvet', 'bedroom', 'home-decor', 'buffalo', 'wild-west'],
         'title': 'Wild West Stampede Duvet',
@@ -141,7 +141,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Cowboy Rodeo Art Print',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Cowboy%20Rodeo%20Art%20Print'},
     {   'id': 'w17',
-        'img': '/images/scraped_image_041.png',
+        'img': '/images/scraped_image_041.webp',
         'store': 'Redbubble',
         'tags': ['western', 'pillow', 'home-decor', 'ranch', 'cowboy', 'gifts'],
         'title': 'Western Ranch Throw Pillow',
@@ -159,7 +159,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Native American Dreamcatcher',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Native%20American%20Dreamcatcher'},
     {   'id': 'w20',
-        'img': '/images/scraped_image_064.png',
+        'img': '/images/scraped_image_064.webp',
         'store': 'Redbubble',
         'tags': ['western', 'blanket', 'home-decor', 'cowboy', 'gifts', 'cozy'],
         'title': 'Wild West Throw Blanket',
@@ -171,13 +171,13 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Western Boot Wall Decor',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Western%20Boot%20Wall%20Decor'},
     {   'id': 'w22',
-        'img': '/images/scraped_image_041.png',
+        'img': '/images/scraped_image_041.webp',
         'store': 'Redbubble',
         'tags': ['western', 'pillow', 'floor-pillow', 'cowboy', 'home-decor'],
         'title': 'Cowboy Rodeo Floor Pillow',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Cowboy%20Rodeo%20Floor%20Pillow'},
     {   'id': 'w23',
-        'img': '/images/scraped_image_022.png',
+        'img': '/images/scraped_image_022.webp',
         'store': 'Redbubble',
         'tags': ['western', 'tapestry', 'wall-art', 'buffalo', 'home-decor'],
         'title': 'Wild West Buffalo Tapestry',
@@ -387,7 +387,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Geometric Art T-Shirt',
         'url': 'https://www.teepublic.com/user/theblackpanther?query=Geometric%20Art'},
     {   'id': 'd01',
-        'img': '/images/scraped_image_004.png',
+        'img': '/images/scraped_image_004.webp',
         'store': 'Redbubble',
         'tags': ['western', 'duvet', 'bedroom', 'home-decor', 'fantasy', 'women'],
         'title': 'Western Lady Fantasy Duvet Cover',
@@ -399,7 +399,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Indian Tomahawk Wall Tapestry',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Indian%20Tomahawk%20Wall%20Tapestry'},
     {   'id': 'd03',
-        'img': '/images/scraped_image_005.png',
+        'img': '/images/scraped_image_005.webp',
         'store': 'Redbubble',
         'tags': ['western', 'floor-pillow', 'home-decor', 'cowboy', 'wild-west'],
         'title': 'Wild West Wagon Floor Pillow',
@@ -423,7 +423,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Orange Glass Globe Ornament',
         'url': 'https://www.teepublic.com/user/theblackpanther?query=Orange%20Glass%20Globe%20Ornament'},
     {   'id': 'd07',
-        'img': '/images/scraped_image_041.png',
+        'img': '/images/scraped_image_041.webp',
         'store': 'Redbubble',
         'tags': ['spiral', 'wall-art', 'home-decor', 'colorful', 'abstract', 'print'],
         'title': 'Colorful Spiral Wall Art',
@@ -441,7 +441,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Abstract Art Canvas Print',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Abstract%20Art%20Canvas%20Print'},
     {   'id': 'd10',
-        'img': '/images/scraped_image_064.png',
+        'img': '/images/scraped_image_064.webp',
         'store': 'Redbubble',
         'tags': ['western', 'blanket', 'home-decor', 'cowboy', 'cozy', 'gifts'],
         'title': 'Wild West Throw Blanket',
@@ -453,19 +453,19 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Vintage Western Poster',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Vintage%20Western%20Poster'},
     {   'id': 'd12',
-        'img': '/images/scraped_image_041.png',
+        'img': '/images/scraped_image_041.webp',
         'store': 'Redbubble',
         'tags': ['western', 'floor-pillow', 'home-decor', 'ranch', 'cowboy'],
         'title': 'Western Ranch Floor Pillow',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Western%20Ranch%20Floor%20Pillow'},
     {   'id': 'd13',
-        'img': '/images/scraped_image_022.png',
+        'img': '/images/scraped_image_022.webp',
         'store': 'Redbubble',
         'tags': ['western', 'buffalo', 'wall-art', 'home-decor', 'wild-west', 'print'],
         'title': 'Buffalo Stampede Wall Art',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Buffalo%20Stampede%20Wall%20Art'},
     {   'id': 'd14',
-        'img': '/images/scraped_image_079.png',
+        'img': '/images/scraped_image_079.webp',
         'store': 'Redbubble',
         'tags': ['abstract', 'digital-art', 'canvas', 'wall-art', 'home-decor', 'modern'],
         'title': 'Abstract Digital Canvas',
@@ -477,7 +477,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Native Eagle Feather Print',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Native%20Eagle%20Feather%20Print'},
     {   'id': 'd16',
-        'img': '/images/scraped_image_060.png',
+        'img': '/images/scraped_image_060.webp',
         'store': 'Redbubble',
         'tags': ['western', 'rodeo', 'duvet', 'bedroom', 'home-decor', 'cowboy'],
         'title': 'Rodeo Art Duvet Cover',
@@ -489,7 +489,7 @@ PRODUCTS = [   {   'id': 'w01',
         'title': 'Geometric Wall Print',
         'url': 'https://www.redbubble.com/people/Pieterhk/shop?query=Geometric%20Wall%20Print'},
     {   'id': 'd18',
-        'img': '/images/scraped_image_041.png',
+        'img': '/images/scraped_image_041.webp',
         'store': 'Redbubble',
         'tags': ['spiral', 'poster', 'wall-art', 'colorful', 'abstract', 'home-decor'],
         'title': 'Colorful Spiral Poster',
@@ -1852,7 +1852,7 @@ def render_product_card(product):
     return f"""<article class="product-card">
   <a href="{url}" target="_blank" rel="nofollow noopener noreferrer" class="card-img-link">
     <div class="card-img-wrap">
-      <img src="{img_src}" alt="{alt}" width="400" height="400" loading="lazy">
+      <img src="{img_src}" alt="{alt}" width="400" height="400" loading="lazy" decoding="async">
       <span class="store-badge {badge_class}">{store_label}</span>
     </div>
   </a>
@@ -2085,7 +2085,7 @@ def render_section_index(section, section_pages, output_dir):
         card_meta = escape_html(p['meta'])
         cards += f"""<article class="index-card-rich">
   <a href="{url}" class="index-card-img-link">
-    <img src="{card_img}" alt="{card_title}" width="300" height="300" loading="lazy">
+    <img src="{card_img}" alt="{card_title}" width="300" height="300" loading="lazy" decoding="async">
   </a>
   <div class="index-card-content">
     <h2 class="index-card-title"><a href="{url}">{card_title}</a></h2>
@@ -2588,6 +2588,58 @@ def generate_sitemap(urls, all_pages, output_dir):
 
 def generate_robots(output_dir):
     robots_content = f"""User-agent: *
+Allow: /
+
+# Explicitly allow major AI crawlers & search bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Amzn-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: {SITE_URL}/sitemap.xml

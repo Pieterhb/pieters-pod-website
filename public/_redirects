@@ -9,5 +9,14 @@
 /sitemap_products.xml     /sitemap.xml    301
 /sitemap_rooms_themes.xml /sitemap.xml    301
 
+# 301 Redirects for converted WebP images
+/images/scraped_image_004.png    /images/scraped_image_004.webp    301
+/images/scraped_image_005.png    /images/scraped_image_005.webp    301
+/images/scraped_image_022.png    /images/scraped_image_022.webp    301
+/images/scraped_image_041.png    /images/scraped_image_041.webp    301
+/images/scraped_image_060.png    /images/scraped_image_060.webp    301
+/images/scraped_image_064.png    /images/scraped_image_064.webp    301
+/images/scraped_image_079.png    /images/scraped_image_079.webp    301
+
 # Non-existent routes return custom 404
 /*    /404.html    404
