@@ -362,7 +362,7 @@ footer {
 }
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
   padding: 4rem 5%;
   max-width: 1500px;
@@ -397,34 +397,6 @@ footer {
   font-size: 0.85rem;
   max-width: 1500px;
   margin: 0 auto;
-}
-
-@media (max-width: 900px) {
-  .stats-banner { grid-template-columns: repeat(2, 1fr); }
-  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .footer-brand { grid-column: 1 / -1; }
-  .pseo-sections-grid { grid-template-columns: repeat(2, 1fr); }
-  .browse-all-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 640px) {
-  header { padding: 0.75rem 1rem; gap: 0.75rem; }
-  .logo { font-size: 1.2rem; }
-  nav ul { gap: 1rem; }
-  nav a { font-size: 0.85rem; }
-  .stats-banner { grid-template-columns: repeat(2, 1fr); }
-  .footer-content { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero { padding: 4rem 1.5rem; }
-  main { padding: 0 4%; }
-  .pseo-sections-grid { grid-template-columns: 1fr; }
-  .browse-all-grid { grid-template-columns: 1fr; }
-  .featured-pages-grid { grid-template-columns: repeat(2, 1fr); }
-  .category-grid { grid-template-columns: 1fr; }
-}
-
-/* ========== FOOTER (4 columns) ========== */
-.footer-content {
-  grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
 /* ========== PSEO SECTION CARDS ========== */
@@ -562,4 +534,150 @@ footer {
   color: var(--accent-color);
   background: rgba(224,90,51,0.07);
   padding-left: 0.85rem;
+}
+
+/* ========== TABLET STYLES (max-width: 900px) ========== */
+@media (max-width: 900px) {
+  .stats-banner { grid-template-columns: repeat(2, 1fr); }
+  .footer-content { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; }
+  .pseo-sections-grid { grid-template-columns: repeat(2, 1fr); }
+  .browse-all-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ========== CELLPHONE ONLY STYLES (max-width: 640px) ========== */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Safe text wrapping and hyphenation for narrow screens */
+  h1, h2, h3, h4, p, a, span, button {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  header {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+  .nav-inner {
+    gap: 1rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  nav ul {
+    gap: 0.6rem 0.9rem;
+  }
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding: 0 4%;
+  }
+
+  .hero {
+    padding: 3.5rem 1.25rem;
+  }
+  .hero h1 {
+    font-size: clamp(1.75rem, 6vw, 2.3rem);
+  }
+  .hero p {
+    font-size: 0.98rem;
+  }
+  .hero-btns {
+    gap: 0.75rem;
+  }
+
+  /* Responsive buttons on mobile: fit on screen with proper padding */
+  .btn {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.92rem;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .stats-banner {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem 1rem;
+    gap: 0.75rem;
+  }
+  .stat-num {
+    font-size: 2rem;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* PSEO Sections: Stack to 1 column so text and CTA fit fully on screen */
+  .pseo-sections-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .pseo-section-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+  .pseo-section-card h3 {
+    font-size: 1.15rem;
+  }
+  .pseo-section-cta {
+    font-size: 0.88rem;
+  }
+
+  /* Featured Pages: 2 columns on mobile, smaller padding and font to fit text cleanly */
+  .featured-pages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  .featured-page-link {
+    padding: 0.7rem 0.45rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  /* Browse All: Stack to 1 column on cellphones so all links and headers fit fully */
+  .browse-all-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .browse-section-group {
+    padding: 1.25rem 1rem;
+  }
+  .browse-section-group h2 {
+    font-size: 1.05rem;
+  }
+  .browse-links li a {
+    font-size: 0.88rem;
+  }
+
+  /* Footer: Stack to 1 column on cellphones */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 3rem 5%;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-logo {
+    font-size: 1.25rem;
+  }
+  .footer-brand p {
+    font-size: 0.9rem;
+  }
 }
